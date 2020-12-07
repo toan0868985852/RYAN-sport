@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using RYAN_sport.Models;
 
 namespace RYAN_sport
 {
@@ -18,12 +20,22 @@ namespace RYAN_sport
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<SportDBContext>(
+                opts =>
+                {
+                    opts.UseSqlServer(Configuration["ConnectionStrings:RYAN_sportDBContextConnection"]);
+                });
+            services.AddScoped<IStoreRepository, EFStoreRepository>();
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +56,7 @@ namespace RYAN_sport
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -51,7 +64,9 @@ namespace RYAN_sport
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
