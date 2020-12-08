@@ -10,7 +10,6 @@ using RYAN_sport.Models;
 
 namespace RYAN_sport.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
