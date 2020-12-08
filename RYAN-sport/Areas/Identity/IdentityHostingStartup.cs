@@ -23,6 +23,7 @@ namespace RYAN_sport.Areas.Identity
                 services.AddDefaultIdentity<AplicationtUser>(options => {
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
+                    options.Password.RequireDigit = false;
                     options.SignIn.RequireConfirmedAccount = false;
                 })
                     .AddEntityFrameworkStores<RYAN_sportDBContext>();
