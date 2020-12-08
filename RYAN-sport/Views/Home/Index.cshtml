@@ -1,8 +1,252 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "RYAN-Sport Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img style="width: 100%" src="~/imgLogin/swim-bg.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img style="width: 100%" src="~/imgLogin/rugby.jpg" />
+            </div>
+            <div class="swiper-slide">
+                <img style="width: 100%" src="~/imgLogin/para-surf.jpg" />
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+<section>
+    <div class="list-categories col-xl-12">
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/icon1-hover.png" />
+            <img src="~/imgLogin/pic1.jpg" />
+            <h4>CYCLING</h4>
+        </div>
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/icon2-hover.png" />
+            <img src="~/imgLogin/pic2.jpg" />
+            <h4>GOLF</h4>
+        </div>
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/icon3-hover.png" />
+            <img src="~/imgLogin/pic3.jpg" />
+            <h4>SWIMMING</h4>
+        </div>
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/icon4-hover.png" />
+            <img src="~/imgLogin/pic4.jpg" />
+            <h4>TENNIS</h4>
+        </div>
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/running.png" />
+            <img src="~/imgLogin/pic5.jpg" />
+            <h4>Tracking training</h4>
+        </div>
+        <div class="category sport-glery col-xl-2">
+            <img class="icon" src="~/imgLogin/weight_lifting.png" />
+            <img src="~/imgLogin/pic6.jpg" />
+            <h4>Weight training</h4>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="title-center">
+        <h2>Subscription Prices</h2>
+        <span>Exclusive Training Packages</span>
+    </div>
+    <div class="sb-price">
+        <div class="container">
+            <div class="row">
+                <div class="details col-xl-12">
+                    <div class="first-details col-xl-4"
+                         style="float: left;">
+                        <img style="width: 100%" src="~/imgLogin/c7.jpg" />
+                        <div class="first-content">
+                            <h3>Weight training</h3>
+                            <span>Training Center</span>
+                            <p>
+                                Aenean tempor tincidunt diam ut pretium. Nulla elementum
+                                rhoncus ante.
+                            </p>
+                            <a class="regiter" href="#">Regiter</a>
+                        </div>
+                    </div>
+                    <div class="first-details col-xl-4"
+                         style="float: left; margin-left: 115px">
+                        <img style="width: 100%" src="~/imgLogin/c8.jpg" />
+                        <div class="first-content">
+                            <h3>TENNIS CHAMPION</h3>
+                            <span>Reputed Training</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Etiam a lectus eget orci.
+                            </p>
+                            <a class="regiter" href="#">Regiter</a>
+                        </div>
+                    </div>
+                    <div class="first-details col-xl-4"
+                         style="float: right;">
+                        <img style="width: 100%" src="~/imgLogin/c9.jpg" />
+                        <div class="first-content">
+                            <h3>TREKKING PRACTICE</h3>
+                            <span>By well Experienced</span>
+                            <p>
+                                Nunc at pretium est curabitur commodo leac est venenatis
+                                egestas sed.
+                            </p>
+                            <a class="regiter" href="#">Regiter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="title">
+        <h1>LATEST GALLERY</h1>
+        <span>WITNESS OUR GOALS</span>
+    </div>
+    <div class="topbar" id="topbar">
+        <div class="tabs">
+            <div class="tab all" onclick="filterSelection('all')">All</div>
+            <div class="tab cool" onclick="filterSelection('cool')">Cool</div>
+            <div class="tab fun" onclick="filterSelection('fun')">Fun</div>
+            <div class="tab blow" onclick="filterSelection('blow')">Blow</div>
+            <div class="tab relax" onclick="filterSelection('relax')">Relax</div>
+            <div class="tab bliss" onclick="filterSelection('bliss')">Bliss</div>
+            <div class="tab slick" onclick="filterSelection('slick')">Slick</div>
+            <div class="tab enjoin" onclick="filterSelection('enjoin')">
+                Enjoin
+            </div>
+        </div>
+    </div>
+    <div class="container fiter">
+        <div class="image slick">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port9.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image relax">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port6.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image blow">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port5.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image fun">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port2.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image cool">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port1.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image fun">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port3.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image bliss">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port7.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image enjoin">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port10.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image fun">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port4.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image bliss">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port8.jpg"
+                 alt="sorry" />
+        </div>
+        <div class="image fun">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/port11.jpg"
+                 alt="sorry" />
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Ryan</h3>
+                <p style="font-size: 14px; line-height: 2">
+                    The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters, as opposed to using 'Content here,
+                    making it look like readable English.
+                </p>
+                <p class="icon-footer">
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a href="#"><i style="width: 15px" class="fab fa-twitter"></i></a>
+                    <a href="#"><i style="width: 15px" class="fab fa-youtube"></i></a>
+                </p>
+
+                <p></p>
+            </div>
+
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Useful links</h3>
+                <ul>
+                    <li><a href="#">Membership Offers</a></li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Training Schedule</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Inter Competitions</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Awards & Trophies</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase" ;>Latest posts</h3>
+                <img src="~/imgLogin/basketball-team-70x60.jpg" />
+                <div style="float: right; margin-top: -10px; margin-right: 5px">
+                    <h4><a href="#">Basketball Team</a></h4>
+                    <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                        11 Feb 2015
+                    </p>
+                </div>
+                <div>
+                    <img src="~/imgLogin/golf-70x60.jpg" style="padding-top: 15px" />
+                    <div style="float: right; margin-top: 10px; padding-right: 20px">
+                        <h4><a href="#">Tee Shot Zone</a></h4>
+                        <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                            11 Feb 2015
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column1 col-xl-3" style="width: 22%; float: right">
+                <h3 style="text-transform: uppercase">About ryan</h3>
+                <ul style="list-style: none; padding: 0">
+                    <li>Monday - Friday<span>04:00 - 12:00</span></li>
+                    <li style="
+                  border-top: 1px solid #f4f4f4;
+                  border-bottom: 1px solid #f4f4f4;
+                ">
+                        Saturday<span>14:00 - 21:00</span>
+                    </li>
+                    <li>Sunday<span>Holiday</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
