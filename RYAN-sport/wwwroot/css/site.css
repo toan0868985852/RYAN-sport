@@ -13,9 +13,9 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #0bc5ef;
+    border-color: #0bc5ef;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -86,7 +86,7 @@ div.login-logout-tab li.nav-item {
 
 div.login-logout-tab a.nav-link {
     font-size: 25px;
-    color: #495057;
+    color: #1b6ec2;
     text-align: center;
 }
 

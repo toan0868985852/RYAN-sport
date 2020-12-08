@@ -29,7 +29,7 @@ namespace RYAN_sport
             services.AddDbContext<SportDBContext>(
                 opts =>
                 {
-                    opts.UseSqlServer(Configuration["ConnectionStrings:RYAN_sportDBContextConnection"]);
+                    opts.UseSqlServer(Configuration["ConnectionStrings:SportDBContextConnection"]);
                 });
             services.AddScoped<IStoreRepository, EFStoreRepository>();
             services.AddRazorPages();

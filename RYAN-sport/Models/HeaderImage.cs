@@ -7,7 +7,7 @@ namespace RYAN_sport.Models
 {
     public class HeaderImage
     {
-        public int PackageID { get; set; }
+        public int ID { get; set; }
         public string Image { get; set; }
         public string SportName { get; set; }
     }
