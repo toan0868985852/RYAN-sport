@@ -7,9 +7,13 @@ namespace RYAN_sport.Models
 {
     public interface IStoreRepository
     {
-        IQueryable<HeaderImage> HeaderImages { get; }
-        IQueryable<exercisePackage> exercisePackages { get; }
-        IQueryable<about> abouts { get; }
-        IQueryable<galery> galerys { get; }
+        //IQueryable<Card> Cards { get; }
+        //IQueryable<Level> Levels { get; }
+        //IQueryable<LevelSubject> LevelSubjects { get; }
+        //IQueryable<SportRoom> SportRooms { get; }
+        //IQueryable<Subject> Subjects { get; }
+        //IQueryable<SubjectSportRoom> SubjectSportRooms { get; }
+        //IQueryable<Subscription> Subscriptions { get; }
+        //IQueryable<Galery> Galeries { get; }
     }
 }

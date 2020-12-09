@@ -6,6 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201207100031_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201207100031_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209085315_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209085315_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209092307_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209092307_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209100735_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209100735_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\SportDB\20201209081501_InitialDb.cs" />
+    <Compile Remove="Migrations\SportDB\20201209081501_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\SportDB\20201209083941_InitialDb.cs" />
+    <Compile Remove="Migrations\SportDB\20201209083941_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\SportDB\20201209085343_InitialCreate.cs" />
+    <Compile Remove="Migrations\SportDB\20201209085343_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
@@ -14,6 +31,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\SportDB\" />
   </ItemGroup>
 
 </Project>

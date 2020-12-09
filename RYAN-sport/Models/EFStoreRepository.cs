@@ -7,14 +7,18 @@ namespace RYAN_sport.Models
 {
     public class EFStoreRepository : IStoreRepository
     {
-        private SportDBContext context;
-        public EFStoreRepository(SportDBContext ctx)
-        {
-            context = ctx;
-        }
-        public IQueryable<HeaderImage> HeaderImages => context.HeaderImages;
-        public IQueryable<exercisePackage> exercisePackages => context.exercisePackages;
-        public IQueryable<about> abouts => context.abouts;
-        public IQueryable<galery> galerys => context.galerys;
+        //private SportDBContext context;
+        //public EFStoreRepository(SportDBContext ctx)
+        //{
+        //    context = ctx;
+        //}
+        //public IQueryable<Card> Cards => context.Cards;
+        //public IQueryable<Level> Levels => context.Levels;
+        //public IQueryable<LevelSubject> LevelSubjects => context.LevelSubjects;
+        //public IQueryable<SportRoom> SportRooms => context.SportRooms;
+        //public IQueryable<Subject> Subjects => context.Subjects;
+        //public IQueryable<SubjectSportRoom> SubjectSportRooms => context.SubjectSportRooms;
+        //public IQueryable<Subscription> Subscriptions => context.Subscriptions;
+        //public IQueryable<Galery> Galeries => context.Galeries;
     }
 }

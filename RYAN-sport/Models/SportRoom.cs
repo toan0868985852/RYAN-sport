@@ -11,6 +11,6 @@ namespace RYAN_sport.Models
         public string Address { get; set; }
         public string Hotline { get; set; }
 
-        public virtual ICollection<Level> Levels { get; set; }
+        public virtual ICollection<SubjectSportRoom> SubjectSportRooms { get; set; }
     }
 }
