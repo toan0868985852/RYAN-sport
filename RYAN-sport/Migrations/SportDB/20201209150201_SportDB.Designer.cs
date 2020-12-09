@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RYAN_sport.Models;
 
 namespace RYAN_sport.Migrations.SportDB
 {
     [DbContext(typeof(SportDBContext))]
-    partial class SportDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201209150201_SportDB")]
+    partial class SportDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,7 +98,7 @@ namespace RYAN_sport.Migrations.SportDB
                     b.Property<long>("AplicationtUserID")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("AplicationtUserID1")
+                    b.Property<string>("AplicationtUserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("LevelID")

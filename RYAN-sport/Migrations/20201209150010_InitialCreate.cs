@@ -41,11 +41,59 @@ namespace RYAN_sport.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(100)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(100)", nullable: true)
+                    LastName = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Sex = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    Birthday = table.Column<string>(type: "nvarchar(100)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SportRoom",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    Hotline = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SportRoom", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subjects",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
+                    Time = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subjects", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subscription",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RegistrationDate = table.Column<string>(nullable: true),
+                    EndDate = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subscription", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +202,79 @@ namespace RYAN_sport.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Level",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Category = table.Column<string>(nullable: true),
+                    SportRoomID = table.Column<long>(nullable: false),
+                    SubjectsID = table.Column<long>(nullable: false),
+                    SportRoomID1 = table.Column<int>(nullable: true),
+                    SubjectsID1 = table.Column<int>(nullable: true),
+                    AplicationtUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Level", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Level_AspNetUsers_AplicationtUserId",
+                        column: x => x.AplicationtUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Level_SportRoom_SportRoomID1",
+                        column: x => x.SportRoomID1,
+                        principalTable: "SportRoom",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Level_Subjects_SubjectsID1",
+                        column: x => x.SubjectsID1,
+                        principalTable: "Subjects",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Card",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NumberCard = table.Column<string>(nullable: true),
+                    LevelID = table.Column<long>(nullable: false),
+                    SubscriptionID = table.Column<long>(nullable: false),
+                    AplicationtUserID = table.Column<long>(nullable: false),
+                    LevelID1 = table.Column<int>(nullable: true),
+                    SubscriptionID1 = table.Column<int>(nullable: true),
+                    AplicationtUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Card", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Card_AspNetUsers_AplicationtUserId",
+                        column: x => x.AplicationtUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Card_Level_LevelID1",
+                        column: x => x.LevelID1,
+                        principalTable: "Level",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Card_Subscription_SubscriptionID1",
+                        column: x => x.SubscriptionID1,
+                        principalTable: "Subscription",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +313,36 @@ namespace RYAN_sport.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Card_AplicationtUserId",
+                table: "Card",
+                column: "AplicationtUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Card_LevelID1",
+                table: "Card",
+                column: "LevelID1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Card_SubscriptionID1",
+                table: "Card",
+                column: "SubscriptionID1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Level_AplicationtUserId",
+                table: "Level",
+                column: "AplicationtUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Level_SportRoomID1",
+                table: "Level",
+                column: "SportRoomID1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Level_SubjectsID1",
+                table: "Level",
+                column: "SubjectsID1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -212,10 +363,25 @@ namespace RYAN_sport.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Card");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Level");
+
+            migrationBuilder.DropTable(
+                name: "Subscription");
+
+            migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "SportRoom");
+
+            migrationBuilder.DropTable(
+                name: "Subjects");
         }
     }
 }
