@@ -10,7 +10,9 @@ namespace RYAN_sport.Models
     {
         public int ID { get; set; }
         public string NumberCard { get; set; }
-        public string Date { get; set; }
+        public long LevelID { get; set; }
+        public long SubscriptionID { get; set; }
+        public long AplicationtUserID { get; set; }
 
         public virtual Level Level { get; set; }
         public virtual Subscription Subscription { get; set; }

@@ -15,5 +15,10 @@ namespace RYAN_sport.Models
         public DbSet<exercisePackage> exercisePackages { get; set; }
         public DbSet<about> abouts { get; set; }
         public DbSet<galery> galerys { get; set; }
+        public DbSet<Subscription> subscriptions { get; set; }
+        public DbSet<Subjects> Subjects { get; set; }
+        public DbSet<SportRoom> SportRooms { get; set; }
+        public DbSet<Level> Levels { get; set; }
+        public DbSet<Card> Cards { get; set; }
     }
 }

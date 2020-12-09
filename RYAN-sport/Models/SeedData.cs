@@ -171,6 +171,209 @@ namespace RYAN_sport.Models
                 );
                 context.SaveChanges();
             }
+
+            if (!context.subscriptions.Any())
+            {
+                context.subscriptions.AddRange(
+                    new Subscription
+                    {
+                        RegistrationDate = "22-12-2019",
+                        EndDate = "22-12-2020"
+                    },
+                    new Subscription
+                    {
+                        RegistrationDate = "25-2-2020",
+                        EndDate = "25-02-2021"
+                    }, new Subscription
+                    {
+                        RegistrationDate = "9-10-2019",
+                        EndDate = "9-10-2020"
+                    }, new Subscription
+                    {
+                        RegistrationDate = "11-12-2019",
+                        EndDate = "11-12-2021"
+                    },
+                    new Subscription
+                    {
+                        RegistrationDate = "9-12-2019",
+                        EndDate = "9-12-2020"
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            if (!context.Subjects.Any())
+            {
+                context.Subjects.AddRange(
+                    new Subjects
+                    {
+                        Name = "CYCING",
+                        Description = "updating",
+                        Price = 100.00M,
+                        Time = "9 months"
+                    },
+                    new Subjects
+                    {
+                        Name = "GOLF",
+                        Description = "updating",
+                        Price = 1500.00M,
+                        Time = "12 months"
+                    },
+                    new Subjects
+                    {
+                        Name = "SWIMMING",
+                        Description = "updating",
+                        Price = 75.00M,
+                        Time = "6 months"
+                    },
+                    new Subjects
+                    {
+                        Name = "TENNIS",
+                        Description = "updating",
+                        Price = 170.00M,
+                        Time = "12 months"
+                    },
+                    new Subjects
+                    {
+                        Name = "TRACKS TRAINING",
+                        Description = "updating",
+                        Price = 50.00M,
+                        Time = "12 months"
+                    },
+                    new Subjects
+                    {
+                        Name = "WEIGHT TRAINING",
+                        Description = "updating",
+                        Price = 90.00M,
+                        Time = "9 months"
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            if (!context.SportRooms.Any())
+            {
+                context.SportRooms.AddRange(
+                    new SportRoom
+                    {
+                        Name = "Bicycle gym in the Binh Minh house",
+                        Address = "8, Ton That Thuyet, My Dinh 2",
+                        Hotline = "113"
+                    },
+                    new SportRoom
+                    {
+                        Name = "FLC golf course",
+                        Address = "Tu NIem, Ha Noi",
+                        Hotline = "19008198"
+                    },
+                    new SportRoom
+                    {
+                        Name = "Pool Chet Duoi",
+                        Address = "119 Thanh Xuan, HA Noi",
+                        Hotline = "16322000"
+                    },
+                    new SportRoom
+                    {
+                        Name = "Tiger Woods tennis court.",
+                        Address = "Long BIen, Ha Noi",
+                        Hotline = "9886546"
+                    },
+                    new SportRoom
+                    {
+                        Name = "Blue Gym",
+                        Address = "Dai Tu, Ha Noi",
+                        Hotline = "1138556468"
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            if (!context.Levels.Any())
+            {
+                context.Levels.AddRange(
+                    new Level
+                    {
+                        Category = "Vip",
+                        SportRoomID = 1,
+                        SubjectsID = 1                        
+                    },
+                    new Level
+                    {
+                        Category = "SVip",
+                        SportRoomID = 2,
+                        SubjectsID = 2
+                    },
+                    new Level
+                    {
+                        Category = "VVip",
+                        SportRoomID = 3,
+                        SubjectsID = 3
+                    },
+                    new Level
+                    {
+                        Category = "Vip",
+                        SportRoomID = 4,
+                        SubjectsID = 4
+                    },
+                    new Level
+                    {
+                        Category = "Vip",
+                        SportRoomID = 5,
+                        SubjectsID = 5
+                    },
+                    new Level
+                    {
+                        Category = "VVip",
+                        SportRoomID = 5,
+                        SubjectsID = 6
+                    }
+                );
+                context.SaveChanges();
+            }
+
+            if (!context.Cards.Any())
+            {
+                context.Cards.AddRange(
+                    new Card
+                    {
+                        NumberCard = "RYAN120046556",
+                        SubscriptionID = 1,
+                        LevelID = 1,
+                        AplicationtUserID = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046557",
+                        SubscriptionID = 2,
+                        LevelID = 2,
+                        AplicationtUserID = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046558",
+                        SubscriptionID = 3,
+                        LevelID = 3,
+                        AplicationtUserID = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046559",
+                        SubscriptionID = 4,
+                        LevelID = 4,
+                        AplicationtUserID = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN12004650",
+                        SubscriptionID = 5,
+                        LevelID = 5,
+                        AplicationtUserID = 1
+                    }
+                );
+                context.SaveChanges();
+            }
+
+
         }
     }
 }

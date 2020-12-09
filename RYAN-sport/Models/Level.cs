@@ -9,9 +9,12 @@ namespace RYAN_sport.Models
     {
         public int ID { get; set; }
         public string Category { get; set; }
+        public long SportRoomID { get; set; }
+        public long SubjectsID { get; set; }
 
         public virtual ICollection<Card> Cards  { get; set; }
         public virtual SportRoom SportRoom { get; set; }
         public virtual Subjects Subjects { get; set; }
+        
     }
 }
