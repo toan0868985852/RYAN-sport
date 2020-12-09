@@ -1,16 +1,14 @@
-﻿
-
-header {
+﻿header {
     background-color: rgb(48, 54, 60);
     position: fixed;
     z-index: 10;
     margin-left: 8.2%;
     border-radius: 40px;
     width: 85%;
-    height: 87px;
     padding-left: 40px;
     padding-right: 40px;
     margin-top: 7px;
+    height: 88px;
     transition: .4s;
 }
 
@@ -62,6 +60,7 @@ header.sticky {
     width: 100%;
     border-radius: 0px;
     height: 92px;
+    background: #30363cf5;
 }
 
 .text {
@@ -105,7 +104,7 @@ header.sticky {
 }
 
 .sport-glery img {
-    width: 114%;
+    width: 100%;
 }
 
 .list-categories {
@@ -261,6 +260,7 @@ footer a {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: 0;
     transition: .7s;
 }
 
@@ -443,4 +443,154 @@ footer a {
 
 .image:hover .fiter img {
     transform: scale(1.1);
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.backgroud-img {
+    margin-bottom: 70px;
+    position: relative;
+}
+
+    .backgroud-img img {
+        width: 100%;
+    }
+
+.content-right {
+    width: 50%;
+    float: right;
+    color: white;
+}
+
+.icon-hover {
+    display: flex;
+}
+
+.icon-button i {
+    display: block;
+    padding: 17px;
+    border: 3px solid white;
+    width: 67px;
+    margin-top: 25px;
+    font-size: 29px;
+    background-color: white;
+    color: #444444;
+    margin-left: 20px;
+    transition: .4s;
+}
+
+.icon-button a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px;
+    line-height: 56px;
+    letter-spacing: -1px;
+}
+
+.content-right h1 {
+    font-size: 25px;
+    width: 650px;
+    line-height: 40px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+
+.content-right .decoration {
+    width: 70px;
+    height: 3px;
+    background-color: white;
+}
+
+.content-right .content {
+    font-size: 18px;
+    width: 650px;
+    margin-top: 32px;
+    line-height: 30px;
+}
+
+.content-right .button-join {
+    color: white;
+    text-decoration: none;
+    border: 3px solid white;
+    padding: 15px 30px;
+    position: relative;
+    top: 40px;
+}
+
+.content-right .button-plan {
+    color: white;
+    text-decoration: none;
+    border: 3px solid white;
+    padding: 15px 30px;
+    position: relative;
+    top: 40px;
+    left: 20px;
+}
+
+.icon-button:hover i {
+    background-color: gray;
+    color: white;
+}
+
+.clip-pand {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 96%;
+    height: 100%;
+    background: #00c4ffd1;
+    clip-path: polygon(48% 0, 100% 0%, 100% 100%, 33% 100%);
+}
+
+@media only screen and (max-width: 1000px) {
+    .category {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: 20px;
+    }
+
+    .details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .first-details {
+        width: 100%;
+        margin-top: 50px;
+        height: 580px;
+    }
+
+    .first-content a {
+        margin-left: 353px;
+    }
+
+    .tabs {
+        left: 0;
+    }
+
+    .container.fiter {
+        column-count: 2;
+        padding: 0;
+    }
+
+    .category .icon {
+        top: 27%;
+        width: 250px;
+    }
+
+    .category h4 {
+        font-size: 40px;
+    }
+
+    .category:hover h4 {
+        top: 85%;
+    }
 }
