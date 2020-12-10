@@ -10,5 +10,6 @@ namespace RYAN_sport.Models
         public int GaleryID { get; set; }
         public string Image { get; set; }
         public string SportName { get; set; }
+        public string Group { get; set; }
     }
 }
