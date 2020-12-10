@@ -16,6 +16,7 @@ namespace RYAN_sport.Models
         public decimal Price { get; set; }
         public string Time { get; set; }
         public string Category { get; set; }
+        public string ImgSubject { get; set; }
 
         public virtual ICollection<LevelSubject> LevelSubjects { get; set; }
         public virtual ICollection<SubjectSportRoom> SubjectSportRooms { get; set; }

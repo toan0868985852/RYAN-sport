@@ -15,9 +15,9 @@ namespace RYAN_sport.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
-        private RYAN_sportDBContext repository;
+        private IStoreRepository repository;
 
-        public HomeController(RYAN_sportDBContext repo)
+        public HomeController(IStoreRepository repo)
         {
             repository = repo;
         }

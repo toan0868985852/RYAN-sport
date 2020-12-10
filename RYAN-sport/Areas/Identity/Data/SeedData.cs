@@ -208,43 +208,83 @@ namespace RYAN_sport.Areas.Identity.Data
                         Name = "CYCING",
                         Description = "updating",
                         Price = 100.00M,
-                        Time = "9 months"
+                        Time = "9 months", 
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic1.jpg"
                     },
                     new Subject
                     {
                         Name = "GOLF",
                         Description = "updating",
                         Price = 1500.00M,
-                        Time = "12 months"
+                        Time = "12 months",
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic2.jpg"
                     },
                     new Subject
                     {
                         Name = "SWIMMING",
                         Description = "updating",
                         Price = 75.00M,
-                        Time = "6 months"
+                        Time = "6 months",
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic3.jpg"
                     },
                     new Subject
                     {
                         Name = "TENNIS",
                         Description = "updating",
                         Price = 170.00M,
-                        Time = "12 months"
+                        Time = "12 months",
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic4.jpg"
                     },
                     new Subject
                     {
                         Name = "TRACKS TRAINING",
                         Description = "updating",
                         Price = 50.00M,
-                        Time = "12 months"
+                        Time = "12 months",
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic5.jpg"
                     },
                     new Subject
                     {
                         Name = "WEIGHT TRAINING",
                         Description = "updating",
                         Price = 90.00M,
-                        Time = "9 months"
+                        Time = "9 months",
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic6.jpg"
+                    },
+                    new Subject
+                    {
+                        Name = "FOOTBAll",
+                        Description = "updating",
+                        Price = 90.00M,
+                        Time = "8 months",
+                        ImgSubject = "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.15752-9/p1080x2048/129882239_425010888538704_1132306281933710718_n.jpg?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=-x-cmwLErNsAX-8e0Dd&_nc_ht=scontent.fhan2-6.fna&tp=6&oh=005fd4a56ffca8a8e95438c1d77e1aeb&oe=5FF7CE8E"
+                    },
+                    new Subject
+                    {
+                        Name = "BADMINTON",
+                        Description = "updating",
+                        Price = 90.00M,
+                        Time = "8 months",
+                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg"
+                    },
+                    new Subject
+                    {
+                        Name = "BADMINTON",
+                        Description = "updating",
+                        Price = 90.00M,
+                        Time = "31 months",
+                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg"
+                    },
+                    new Subject
+                    {
+                        Name = "BASEKETBALL",
+                        Description = "updating",
+                        Price = 90.00M,
+                        Time = "10 months",
+                        ImgSubject = "https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1581678662/DCUK/Content/iStock-959080376.jpg"
                     }
+
+
                 );
                 context.SaveChanges();
             }
@@ -324,6 +364,12 @@ namespace RYAN_sport.Areas.Identity.Data
                         Name = "Blue Gym",
                         Address = "Dai Tu, Ha Noi",
                         Hotline = "1138556468"
+                    },
+                    new SportRoom
+                    {
+                        Name = "VAnh sports center",
+                        Address = " Ha Noi",
+                        Hotline = "113855646458"
                     }
                 );
                 context.SaveChanges();
@@ -361,14 +407,32 @@ namespace RYAN_sport.Areas.Identity.Data
                     {
                         SportRoomId = 5,
                         SubjectId = 6
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 6,
+                        SubjectId = 7
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 6,
+                        SubjectId = 8
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 6,
+                        SubjectId = 9
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 6,
+                        SubjectId = 10
                     }
+
                 );
                 context.SaveChanges();
             }
-
-            
-
-            
+     
 
             if (!context.Cards.Any())
             {
