@@ -6,6 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\SportDB\**" />
+    <Content Remove="Migrations\SportDB\**" />
+    <EmbeddedResource Remove="Migrations\SportDB\**" />
+    <None Remove="Migrations\SportDB\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201207100031_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201207100031_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209085315_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209085315_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209092307_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209092307_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209100735_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209100735_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201209102627_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201209102627_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201210025536_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201210025536_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />

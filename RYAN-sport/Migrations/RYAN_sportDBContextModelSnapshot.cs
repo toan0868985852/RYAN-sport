@@ -163,10 +163,10 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Birthday")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -180,10 +180,10 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(101)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(101)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -212,7 +212,7 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sex")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -241,36 +241,49 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("AplicationtUserID")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("AplicationtUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<long>("LevelID")
-                        .HasColumnType("bigint");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int?>("LevelID1")
+                    b.Property<int>("LevelId")
                         .HasColumnType("int");
 
                     b.Property<string>("NumberCard")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("SubscriptionID")
-                        .HasColumnType("bigint");
-
-                    b.Property<int?>("SubscriptionID1")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
                     b.HasIndex("AplicationtUserId");
 
-                    b.HasIndex("LevelID1");
+                    b.HasIndex("LevelId");
 
-                    b.HasIndex("SubscriptionID1");
+                    b.ToTable("Cards");
+                });
 
-                    b.ToTable("Card");
+            modelBuilder.Entity("RYAN_sport.Models.Galery", b =>
+                {
+                    b.Property<int>("GaleryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SportName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GaleryID");
+
+                    b.ToTable("Galeries");
                 });
 
             modelBuilder.Entity("RYAN_sport.Models.Level", b =>
@@ -280,33 +293,34 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AplicationtUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Category")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("SportRoomID")
-                        .HasColumnType("bigint");
+                    b.HasKey("ID");
 
-                    b.Property<int?>("SportRoomID1")
+                    b.ToTable("Levels");
+                });
+
+            modelBuilder.Entity("RYAN_sport.Models.LevelSubject", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("LevelId")
                         .HasColumnType("int");
 
-                    b.Property<long>("SubjectsID")
-                        .HasColumnType("bigint");
-
-                    b.Property<int?>("SubjectsID1")
+                    b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AplicationtUserId");
+                    b.HasIndex("LevelId");
 
-                    b.HasIndex("SportRoomID1");
+                    b.HasIndex("SubjectId");
 
-                    b.HasIndex("SubjectsID1");
-
-                    b.ToTable("Level");
+                    b.ToTable("LevelSubjects");
                 });
 
             modelBuilder.Entity("RYAN_sport.Models.SportRoom", b =>
@@ -327,15 +341,18 @@ namespace RYAN_sport.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("SportRoom");
+                    b.ToTable("SportRooms");
                 });
 
-            modelBuilder.Entity("RYAN_sport.Models.Subjects", b =>
+            modelBuilder.Entity("RYAN_sport.Models.Subject", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -354,6 +371,28 @@ namespace RYAN_sport.Migrations
                     b.ToTable("Subjects");
                 });
 
+            modelBuilder.Entity("RYAN_sport.Models.SubjectSportRoom", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("SportRoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("SportRoomId");
+
+                    b.HasIndex("SubjectId");
+
+                    b.ToTable("SubjectSportRooms");
+                });
+
             modelBuilder.Entity("RYAN_sport.Models.Subscription", b =>
                 {
                     b.Property<int>("ID")
@@ -361,15 +400,20 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("EndDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CardId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("RegistrationDate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Subscription");
+                    b.HasIndex("CardId");
+
+                    b.ToTable("Subscriptions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -425,32 +469,54 @@ namespace RYAN_sport.Migrations
 
             modelBuilder.Entity("RYAN_sport.Models.Card", b =>
                 {
-                    b.HasOne("RYAN_sport.Areas.Identity.Data.AplicationtUser", "AplicationtUser")
-                        .WithMany()
+                    b.HasOne("RYAN_sport.Areas.Identity.Data.AplicationtUser", null)
+                        .WithMany("Cards")
                         .HasForeignKey("AplicationtUserId");
 
                     b.HasOne("RYAN_sport.Models.Level", "Level")
                         .WithMany("Cards")
-                        .HasForeignKey("LevelID1");
-
-                    b.HasOne("RYAN_sport.Models.Subscription", "Subscription")
-                        .WithMany("Cards")
-                        .HasForeignKey("SubscriptionID1");
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("RYAN_sport.Models.Level", b =>
+            modelBuilder.Entity("RYAN_sport.Models.LevelSubject", b =>
                 {
-                    b.HasOne("RYAN_sport.Areas.Identity.Data.AplicationtUser", null)
-                        .WithMany("Levels")
-                        .HasForeignKey("AplicationtUserId");
+                    b.HasOne("RYAN_sport.Models.Level", "Level")
+                        .WithMany("LevelSubjects")
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
+                    b.HasOne("RYAN_sport.Models.Subject", "Subject")
+                        .WithMany("LevelSubjects")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("RYAN_sport.Models.SubjectSportRoom", b =>
+                {
                     b.HasOne("RYAN_sport.Models.SportRoom", "SportRoom")
-                        .WithMany("Levels")
-                        .HasForeignKey("SportRoomID1");
+                        .WithMany("SubjectSportRooms")
+                        .HasForeignKey("SportRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("RYAN_sport.Models.Subjects", "Subjects")
-                        .WithMany("Levels")
-                        .HasForeignKey("SubjectsID1");
+                    b.HasOne("RYAN_sport.Models.Subject", "Subject")
+                        .WithMany("SubjectSportRooms")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("RYAN_sport.Models.Subscription", b =>
+                {
+                    b.HasOne("RYAN_sport.Models.Card", "Card")
+                        .WithMany("Subscriptions")
+                        .HasForeignKey("CardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

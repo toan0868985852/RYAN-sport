@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RYAN_sport.Areas.Identity.Data;
+using RYAN_sport.Models;
 
 namespace RYAN_sport.Data
 {
@@ -15,7 +16,14 @@ namespace RYAN_sport.Data
             : base(options)
         {
         }
-
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<Level> Levels { get; set; }
+        public DbSet<LevelSubject> LevelSubjects { get; set; }
+        public DbSet<SportRoom> SportRooms { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<SubjectSportRoom> SubjectSportRooms { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<Galery> Galeries { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

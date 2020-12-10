@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using RYAN_sport.Models;
+using RYAN_sport.Areas.Identity.Data;
 
 namespace RYAN_sport
 {
@@ -26,11 +26,11 @@ namespace RYAN_sport
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<SportDBContext>(
-                opts =>
-                {
-                    opts.UseSqlServer(Configuration["ConnectionStrings:SportDBContextConnection"]);
-                });
+            //services.AddDbContext<SportDBContext>(
+            //    opts =>
+            //    {
+            //        opts.UseSqlServer(Configuration["ConnectionStrings:RYAN_sportDBContextConnection"]);
+            //    });
             services.AddScoped<IStoreRepository, EFStoreRepository>();
             services.AddRazorPages();
 

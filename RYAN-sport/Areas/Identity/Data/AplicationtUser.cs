@@ -12,23 +12,20 @@ namespace RYAN_sport.Areas.Identity.Data
     public class AplicationtUser : IdentityUser
     {
         [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(101)")]
         public string FirstName { get; set; }
         [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(101)")]
         public string LastName { get; set; }
-
-        [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        
+        
         public string Sex { get; set; }
-        [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+        
         public string Address { get; set; }
-        [PersonalData]
-        [Column(TypeName = "nvarchar(100)")]
+       
         public string Birthday { get; set; }
 
-        public virtual ICollection<Level> Levels { get; set; }
+        public virtual ICollection<Card> Cards { get; set; }
 
     }
 }
