@@ -10,7 +10,7 @@ using RYAN_sport.Data;
 namespace RYAN_sport.Migrations
 {
     [DbContext(typeof(RYAN_sportDBContext))]
-    [Migration("20201209102627_InitialCreate")]
+    [Migration("20201210035953_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -274,6 +274,9 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -333,6 +336,9 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Hotline")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");

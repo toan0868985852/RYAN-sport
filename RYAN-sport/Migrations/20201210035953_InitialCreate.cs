@@ -58,7 +58,8 @@ namespace RYAN_sport.Migrations
                     GaleryID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Image = table.Column<string>(nullable: true),
-                    SportName = table.Column<string>(nullable: true)
+                    SportName = table.Column<string>(nullable: true),
+                    Group = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,6 +85,7 @@ namespace RYAN_sport.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     Hotline = table.Column<string>(nullable: true)
                 },

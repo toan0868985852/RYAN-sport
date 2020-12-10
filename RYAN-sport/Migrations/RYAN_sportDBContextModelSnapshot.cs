@@ -272,6 +272,9 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -331,6 +334,9 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Hotline")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
