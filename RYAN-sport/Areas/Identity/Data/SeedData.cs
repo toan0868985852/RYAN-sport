@@ -90,32 +90,55 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
-            if (!context.Subscriptions.Any())
+            //if (!context.Subscriptions.Any())
+            //{
+            //    context.Subscriptions.AddRange(
+            //        new Subscription
+            //        {
+            //            RegistrationDate = DateTime.Parse("2019-12-22"),
+            //            EndDate = DateTime.Parse("2020-12-22")
+            //        },
+            //        new Subscription
+            //        {
+            //            RegistrationDate = DateTime.Parse("2020-02-25"),
+            //            EndDate = DateTime.Parse("2021-02-25")
+            //        }, new Subscription
+            //        {
+            //            RegistrationDate = DateTime.Parse("9-10-2019"),
+            //            EndDate = DateTime.Parse("9-10-2020")
+            //        }, new Subscription
+            //        {
+            //            RegistrationDate = DateTime.Parse("11-12-2019"),
+            //            EndDate = DateTime.Parse("11-12-2021")
+            //        },
+            //        new Subscription
+            //        {
+            //            RegistrationDate = DateTime.Parse("9-12-2019"),
+            //            EndDate = DateTime.Parse("9-12-2020")
+            //        }
+            //    );
+            //    context.SaveChanges();
+            //}
+
+            if (!context.Levels.Any())
             {
-                context.Subscriptions.AddRange(
-                    new Subscription
+                context.Levels.AddRange(
+                    new Level
                     {
-                        RegistrationDate = DateTime.Parse("2019-12-22"),
-                        EndDate = DateTime.Parse("2020-12-22")
+                        Name = "Vip",
+
                     },
-                    new Subscription
+                    new Level
                     {
-                        RegistrationDate = DateTime.Parse("2020-02-25"),
-                        EndDate = DateTime.Parse("2021-02-25")
-                    }, new Subscription
-                    {
-                        RegistrationDate = DateTime.Parse("9-10-2019"),
-                        EndDate = DateTime.Parse("9-10-2020")
-                    }, new Subscription
-                    {
-                        RegistrationDate = DateTime.Parse("11-12-2019"),
-                        EndDate = DateTime.Parse("11-12-2021")
+                        Name = "SVip",
+
                     },
-                    new Subscription
+                    new Level
                     {
-                        RegistrationDate = DateTime.Parse("9-12-2019"),
-                        EndDate = DateTime.Parse("9-12-2020")
+                        Name = "VVip",
+
                     }
+
                 );
                 context.SaveChanges();
             }
@@ -166,6 +189,49 @@ namespace RYAN_sport.Areas.Identity.Data
                         Time = "9 months"
                     }
                 );
+                context.SaveChanges();
+            }
+
+            if (!context.LevelSubjects.Any())
+            {
+                context.LevelSubjects.AddRange(
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 1
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 2,
+                        SubjectId = 1
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 2
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 3
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 4
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 6
+
+                    }
+                ); ;
                 context.SaveChanges();
             }
 
@@ -243,71 +309,9 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
-            if (!context.Levels.Any())
-            {
-                context.Levels.AddRange(
-                    new Level
-                    {
-                        Name = "Vip",
-                        
-                    },
-                    new Level
-                    {
-                        Name = "SVip",
-                        
-                    },
-                    new Level
-                    {
-                        Name = "VVip",
-                        
-                    }
-                   
-                );
-                context.SaveChanges();
-            }
+            
 
-            if (!context.LevelSubjects.Any())
-            {
-                context.LevelSubjects.AddRange(
-                    new LevelSubject
-                    {
-                        LevelId = 1,
-                        SubjectId = 1
-
-                    },
-                    new LevelSubject
-                    {
-                        LevelId = 2,
-                        SubjectId = 1
-
-                    },
-                    new LevelSubject
-                    {
-                        LevelId = 1,
-                        SubjectId = 2
-
-                    },
-                    new LevelSubject
-                    {
-                        LevelId = 1,
-                        SubjectId = 3
-
-                    },
-                    new LevelSubject
-                    {
-                        LevelId = 1,
-                        SubjectId = 4
-
-                    },
-                    new LevelSubject
-                    {
-                        LevelId = 1,
-                        SubjectId = 6
-
-                    }
-                ); ;
-                context.SaveChanges();
-            }
+            
 
             if (!context.Cards.Any())
             {
@@ -315,34 +319,33 @@ namespace RYAN_sport.Areas.Identity.Data
                     new Card
                     {
                         NumberCard = "RYAN120046556",
-                        UserId = "",
                         LevelId = 1
                         
-                    },
-                    new Card
-                    {
-                        NumberCard = "RYAN120046557",
-                        UserId = "",
-                        LevelId = 2
-                    },
-                    new Card
-                    {
-                        NumberCard = "RYAN120046558",
-                        UserId = "",
-                        LevelId = 1
-                    },
-                    new Card
-                    {
-                        NumberCard = "RYAN120046559",
-                        UserId = "",
-                        LevelId = 1
-                    },
-                    new Card
-                    {
-                        NumberCard = "RYAN12004650",
-                        UserId = "",
-                        LevelId = 3
                     }
+                    //new Card
+                    //{
+                    //    NumberCard = "RYAN120046557",
+                    //    UserId = "",
+                    //    LevelId = 2
+                    //},
+                    //new Card
+                    //{
+                    //    NumberCard = "RYAN120046558",
+                    //    UserId = "",
+                    //    LevelId = 1
+                    //},
+                    //new Card
+                    //{
+                    //    NumberCard = "RYAN120046559",
+                    //    UserId = "",
+                    //    LevelId = 1
+                    //},
+                    //new Card
+                    //{
+                    //    NumberCard = "RYAN12004650",
+                    //    UserId = "",
+                    //    LevelId = 3
+                    //}
                 );
                 context.SaveChanges();
             }
