@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RYAN_sport.Data;
 using RYAN_sport.Models;
+using RYAN_sport.Areas.Identity.Data;
 
 namespace RYAN_sport.Areas.Identity.Data
 {
@@ -205,6 +206,43 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
+            if (!context.SubjectSportRooms.Any())
+            {
+                context.SubjectSportRooms.AddRange(
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 1,
+                        SubjectId = 1
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 2,
+                        SubjectId = 2
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 3,
+                        SubjectId = 3
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 4,
+                        SubjectId = 4
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 5,
+                        SubjectId = 5
+                    },
+                    new SubjectSportRoom
+                    {
+                        SportRoomId = 5,
+                        SubjectId = 6
+                    }
+                );
+                context.SaveChanges();
+            }
+
             if (!context.Levels.Any())
             {
                 context.Levels.AddRange(
@@ -228,33 +266,82 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
+            if (!context.LevelSubjects.Any())
+            {
+                context.LevelSubjects.AddRange(
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 1
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 2,
+                        SubjectId = 1
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 2
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 3
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 4
+
+                    },
+                    new LevelSubject
+                    {
+                        LevelId = 1,
+                        SubjectId = 6
+
+                    }
+                ); ;
+                context.SaveChanges();
+            }
+
             if (!context.Cards.Any())
             {
                 context.Cards.AddRange(
                     new Card
                     {
                         NumberCard = "RYAN120046556",
+                        UserId = "",
+                        LevelId = 1
                         
                     },
                     new Card
                     {
                         NumberCard = "RYAN120046557",
-                        
+                        UserId = "",
+                        LevelId = 2
                     },
                     new Card
                     {
                         NumberCard = "RYAN120046558",
-                        
+                        UserId = "",
+                        LevelId = 1
                     },
                     new Card
                     {
                         NumberCard = "RYAN120046559",
-                        
+                        UserId = "",
+                        LevelId = 1
                     },
                     new Card
                     {
                         NumberCard = "RYAN12004650",
-                        
+                        UserId = "",
+                        LevelId = 3
                     }
                 );
                 context.SaveChanges();
