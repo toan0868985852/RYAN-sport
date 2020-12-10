@@ -1,19 +1,23 @@
-﻿@{
+﻿
+@model IQueryable<Galery>
+
+@{
     ViewData["Title"] = "RYAN-Sport Home";
 }
 
 <section>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img style="width: 100%" src="~/imgLogin/swim-bg.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img style="width: 100%" src="~/imgLogin/rugby.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img style="width: 100%" src="~/imgLogin/para-surf.jpg" />
-            </div>
+            @foreach (var p in Model)
+            {
+                if (p.Group == "Header")
+                {
+                    <div class="swiper-slide">
+                        <img style="width: 100%" src="@p.Image" />
+                    </div>
+                }
+            }
+
         </div>
 
         <div class="swiper-pagination"></div>

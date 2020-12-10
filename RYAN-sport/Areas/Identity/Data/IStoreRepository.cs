@@ -6,7 +6,7 @@ using RYAN_sport.Models;
 
 namespace RYAN_sport.Areas.Identity.Data
 {
-    public class IStoreRepository
+    public interface IStoreRepository
     {
         IQueryable<Card> Cards { get; }
         IQueryable<Level> Levels { get; }

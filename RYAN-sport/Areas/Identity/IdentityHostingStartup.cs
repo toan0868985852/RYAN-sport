@@ -25,7 +25,7 @@ namespace RYAN_sport.Areas.Identity
                     options.Password.RequireUppercase = false;
                     options.Password.RequireDigit = false;
                     options.SignIn.RequireConfirmedAccount = false;
-                })
+                }).AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<RYAN_sportDBContext>();
             });
         }

@@ -26,33 +26,90 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.Galeries.AddRange(
                     new Galery
                     {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/para-surf.jpg",
+                        Group = "Header"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/swim-bg.jpg",
+                        Group = "Header"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/rugby.jpg",
+                        Group = "Header"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon1-hover.png",
+                        SportName = "CYCING",
+                        Group = "Icon"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon2-hover.png",
+                        SportName = "GOLF",
+                        Group = "Icon"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon3-hover.png",
+                        SportName = "SWINGMING",
+                        Group = "Icon"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon4-hover.png",
+                        SportName = "TENNIS",
+                        Group = "Icon"
+                    },new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon5-hover.png",
+                        SportName = "TRACK TRAINING",
+                        Group = "Icon"
+                    },
+                    new Galery
+                    {
+                        Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/icon6-hover.png",
+                        SportName = "WEIGHT TRAINING",
+                        Group = "Icon"
+                    },
+
+                    new Galery
+                    {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic1.jpg",
                         SportName = "CYCING",
+                        Group = "Icon"
                     },
                     new Galery
                     {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic2.jpg",
                         SportName = "GOLF",
+                        Group = "Icon"
                     },
                     new Galery
                     {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic3.jpg",
                         SportName = "SWIMMING",
+                        Group = "Icon"
                     },
                     new Galery
                     {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic4.jpg",
                         SportName = "TENNIS",
+                        Group = "Icon"
                     },
                     new Galery
                     {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic5.jpg",
                         SportName = "TRACKS TRAINING",
+                        Group = "Icon"
                     },
                     new Galery
                     {
                         Image = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic6.jpg",
                         SportName = "WEIGHT TRAINING",
+                        Group = "Icon"
                     },
                     new Galery
                     {

@@ -7,24 +7,22 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RYAN_sport.Models;
+using RYAN_sport.Data;
+using RYAN_sport.Areas.Identity.Data;
 
 namespace RYAN_sport.Controllers
 {
     //[Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private RYAN_sportDBContext repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(RYAN_sportDBContext repo)
         {
-            _logger = logger;
+            repository = repo;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+        public IActionResult Index() => View(repository.Galeries);
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
