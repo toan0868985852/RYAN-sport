@@ -16,10 +16,17 @@ namespace RYAN_sport.Controllers
     {
         private IStoreRepository repository;
         public int PageSize = 6;
-        public ViewResult Index(int productPage = 1)
+
+        public SubjectController(IStoreRepository repo)
+        {
+            repository = repo;
+        }
+
+        public ViewResult Index(string category, int productPage = 1)
              => View(new ProductListViewModel
              {
                  Subjects = repository.Subjects
+                 .Where(p => category == null || p.Category == category)
                  .OrderBy(p => p.ID)
                  .Skip((productPage - 1) * PageSize)
                  .Take(PageSize),
@@ -27,8 +34,9 @@ namespace RYAN_sport.Controllers
                  {
                      CurrentPage = productPage,
                      ItemsPerPage = PageSize,
-                     TotalItems = repository.Subjects.Count()
-                 }
+                     TotalItems = category == null ? repository.Subjects.Count() : repository.Subjects.Where(e => e.Category == category).Count()
+                 },
+                 CurrentCategory = category
              });
     }
 }

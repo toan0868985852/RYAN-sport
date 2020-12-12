@@ -9,5 +9,7 @@ namespace RYAN_sport.Models.ViewModels
     {
         public IEnumerable<Subject> Subjects { get; set; }
         public PagingInfo PagingInfo { get; set; }
+
+        public string CurrentCategory { get; set; }
     }
 }

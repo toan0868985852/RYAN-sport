@@ -64,6 +64,10 @@ namespace RYAN_sport
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("Subject",
+                    "Subject{productPage:int}",
+                    new { Controller = "Subject", action = "Index", productPage = 1 });
+                endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
             });
             SeedData.EnsurePopulated(app);
