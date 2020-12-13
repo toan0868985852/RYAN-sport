@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RYAN_sport.Models.ViewModels
 {
-    public class ProductListViewModel
+    public class SubjectListViewModel
     {
         public IEnumerable<Subject> Subjects { get; set; }
         public PagingInfo PagingInfo { get; set; }

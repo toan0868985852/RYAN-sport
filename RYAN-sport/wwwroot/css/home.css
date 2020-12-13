@@ -307,7 +307,7 @@ footer a {
 
 .first-details {
     width: 365px;
-    height: 480px;
+    
 }
 
 .first-content h3 {
@@ -319,7 +319,6 @@ footer a {
 .first-content p {
     font-size: 15px;
     line-height: 28px;
-    padding-top: 13px;
 }
 
 .first-content span {

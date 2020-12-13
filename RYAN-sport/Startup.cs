@@ -67,6 +67,9 @@ namespace RYAN_sport
                 endpoints.MapControllerRoute("Subject",
                     "Subject{productPage:int}",
                     new { Controller = "Subject", action = "Index", productPage = 1 });
+                endpoints.MapControllerRoute("DetailSubject",
+                    "DetailSubject/Id={SubjectId}",
+                    new { Controller = "Subject", action = "DetailSubject", SubjectId = 1 });
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
             });

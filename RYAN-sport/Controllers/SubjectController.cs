@@ -23,7 +23,7 @@ namespace RYAN_sport.Controllers
         }
 
         public ViewResult Index(string category, int productPage = 1)
-             => View(new ProductListViewModel
+             => View(new SubjectListViewModel
              {
                  Subjects = repository.Subjects
                  .Where(p => category == null || p.Category == category)
@@ -38,5 +38,13 @@ namespace RYAN_sport.Controllers
                  },
                  CurrentCategory = category
              });
+
+        public ViewResult DetailSubject(int SubjectId)
+            => View(new SubjectListViewModel
+            {
+                Subjects = repository.Subjects
+                 .Where(p => p.ID == SubjectId),
+                
+            });
     }
 }

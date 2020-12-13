@@ -1,47 +1,141 @@
-﻿@model Subject
-    <div class="sb-price">
-        <div class="container">
-            <div class="row">
-                <div class="details col-xl-12">
-                    <div class="first-details col-xl-4">
-                        <img style="width: 100%" src="~/imgLogin/c7.jpg" />
+﻿@model SubjectListViewModel
+<div class="sb-price" >
+    <div class="container">
+        <div class="row">
+            <div class="details col-xl-12" style="flex-wrap: wrap; margin-top: 100px">
+                <style>
+                    .first-details {
+                        width: 365px;
+                        height: 535px;
+                        margin-bottom: 45px;
+                    }
+
+                    .details-price span {
+                        font-size: 20px;
+                        color: #2D2D2D;
+                        font-weight: 600;
+                    }
+
+                    .details {
+                        display: flex;
+                        justify-content: space-around;
+                    }
+
+                    .first-content a {
+                        text-decoration: none;
+                        border: 1px solid gray;
+                        background: gray;
+                        color: white;
+                        padding: 10px 126px;
+                         margin-left: 0px;
+                        position: relative;
+                        top: 30px;
+                    }
+                </style>
+                @foreach (var p in Model.Subjects)
+                {
+                    <div class="first-details col-xl-4" style="margin-top: 20px; padding-top: 10px ">
+                        <img style="width: 100%; height: 291px" src="@p.ImgSubject" />
                         <div class="first-content">
-                            <h3>Weight training</h3>
+                            <h3>@p.Name</h3>
                             <span>Training Center</span>
-                            <p>
-                                Aenean tempor tincidunt diam ut pretium. Nulla elementum
-                                rhoncus ante.
+                            <p style="padding-top: 0px">
+                                @p.Description
                             </p>
-                            <a class="regiter" href="#">Regiter</a>
+                            <div class="details-price">
+                                
+                                <span>$&nbsp;@p.Price</span> -
+                                <i class='far fa-clock'>&nbsp;@p.Time &nbsp;Days</i>
+                            </div>
+                            <a class="regiter" href="DetailSubject/Id=@p.ID" style="padding: 10px 112px">Register</a>
                         </div>
                     </div>
-                    <div class="first-details col-xl-4">
-                        <img style="width: 100%" src="~/imgLogin/c8.jpg" />
-                        <div class="first-content">
-                            <h3>TENNIS CHAMPION</h3>
-                            <span>Reputed Training</span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Etiam a lectus eget orci.
-                            </p>
-                            <a class="regiter" href="#">Regiter</a>
-                        </div>
-                    </div>
-                    <div class="first-details col-xl-4">
-                        <img style="width: 100%" src="~/imgLogin/c9.jpg" />
-                        <div class="first-content">
-                            <h3>TREKKING PRACTICE</h3>
-                            <span>By well Experienced</span>
-                            <p>
-                                Nunc at pretium est curabitur commodo leac est venenatis
-                                egestas sed.
-                            </p>
-                            <a class="regiter" href="#">Regiter</a>
-                        </div>
+                }
+
+
+            </div>
+
+            <div page-model="@Model.PagingInfo" page-action="Index"
+                 page-classes-enabled="true"
+                 page-class="btn" page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-primary"
+                 page-url-category="@Model.CurrentCategory"
+                 class="btn-group pull-right m-1"></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Ryan</h3>
+                <p style="font-size: 14px; line-height: 2">
+                    The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters, as opposed to using 'Content here,
+                    making it look like readable English.
+                </p>
+                <p class="icon-footer">
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a href="#"><i style="width: 15px" class="fab fa-twitter"></i></a>
+                    <a href="#"><i style="width: 15px" class="fab fa-youtube"></i></a>
+                </p>
+
+                <p></p>
+            </div>
+
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Useful links</h3>
+                <ul>
+                    <li><a href="#">Membership Offers</a></li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Training Schedule</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Inter Competitions</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Awards & Trophies</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase" ;>Latest posts</h3>
+                <img src="~/imgLogin/basketball-team-70x60.jpg" />
+                <div style="float: right; margin-top: -10px; margin-right: 5px">
+                    <h4><a href="#">Basketball Team</a></h4>
+                    <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                        11 Feb 2015
+                    </p>
+                </div>
+                <div>
+                    <img src="~/imgLogin/golf-70x60.jpg" style="padding-top: 15px" />
+                    <div style="float: right; margin-top: 10px; padding-right: 20px">
+                        <h4><a href="#">Tee Shot Zone</a></h4>
+                        <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                            11 Feb 2015
+                        </p>
                     </div>
                 </div>
             </div>
+            <div class="column1 col-xl-3" style="width: 22%; float: right">
+                <h3 style="text-transform: uppercase">About ryan</h3>
+                <ul style="list-style: none; padding: 0">
+                    <li>Monday - Friday<span>04:00 - 12:00</span></li>
+                    <li style="
+                  border-top: 1px solid #f4f4f4;
+                  border-bottom: 1px solid #f4f4f4;
+                ">
+                        Saturday<span>14:00 - 21:00</span>
+                    </li>
+                    <li>Sunday<span>Holiday</span></li>
+                </ul>
+            </div>
         </div>
     </div>
-
-<div 
+</footer>

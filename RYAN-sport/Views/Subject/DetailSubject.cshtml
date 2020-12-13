@@ -1,0 +1,297 @@
+﻿@model SubjectListViewModel
+<style>
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: rgb(48 54 60);
+        /*position: fixed;*/
+        /*z-index: 10;*/
+        /*margin-left: 8.2%;*/
+        /*border-radius: 40px;*/
+        /*width: 85%;*/
+        /*padding-left: 40px;*/
+        /*padding-right: 40px;*/
+        /*margin-top: 7px;*/
+        /*transition: .4s;*/
+    }
+
+    .main-header {
+        float: left;
+        padding: 20px 0px 20px 0px;
+    }
+
+    .header-right {
+        float: right;
+    }
+
+    header a {
+        padding-right: 15px;
+        font-size: 14px;
+        margin: 0;
+        font-weight: 700;
+        line-height: 50px;
+        color: #FFF;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding-top: 50px;
+    }
+
+    header .logo {
+        font-size: 25px;
+    }
+
+    header a:hover {
+        color: #0da1ff;
+        transition: 0.5s;
+    }
+
+    .main-header a span {
+        position: absolute;
+        top: 23px;
+        right: 309px;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        font-size: 12px;
+        display: inline-block;
+        line-height: 18px;
+        border-radius: 2px;
+    }
+
+    header.sticky {
+        margin: 0px;
+        width: 100%;
+        border-radius: 0px;
+        height: 92px;
+        background: #30363cf5;
+    }
+
+.section2 { background-image: url("https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/bread-crumb-bg.jpg"); background-repeat: repeat; background-position: right; width: 100%; float: left; margin-bottom: 50px; clear: both; background-color: rgb(235, 235, 235); }
+
+    .banner-activities {
+        display: inline-block;
+        width: 100%;
+        padding: 20px 0px 5px;
+        margin-top: 0px;
+        float: left;
+    }
+
+        .banner-activities h2 {
+            color: #0DA1FF;
+        }
+
+    .breadcrumb {
+        float: right;
+        background: none;
+    }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #0d6efd;
+        }
+
+            .breadcrumb a:hover {
+                color: gray;
+                transition: 0.5s;
+            }
+
+        .breadcrumb h4 {
+            font-weight: 100;
+            padding-top: 2px;
+            font-size: 18px;
+            /*color: #212529;*/
+        }
+
+        .breadcrumb span {
+            color: #212529;
+        }
+
+    .list-menu ul li {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ebebeb;
+        padding-top: 20px;
+    }
+
+    .list-menu ul {
+        list-style: none;
+        padding: 0;
+        /*border-bottom: 1px solid #4d4d4d;*/
+    }
+
+        .list-menu ul li a {
+            text-decoration: none;
+            padding: 10px 10px 10px 40px;
+            color: black;
+            font-weight: 600;
+        }
+
+    .list-menu a:hover {
+        color: #FFFFFF;
+        transition: 1s;
+    }
+
+    .list-menu ul li:hover {
+        transition: 1s;
+        background-color: #0da1ff;
+        /*border: 1px solid #0da1ff;*/
+        color: #FFFFFF;
+    }
+
+    .content-sec3 h2 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 25px;
+        padding-top: 20px;
+    }
+
+    .content-sec3 p {
+        padding-top: 30px;
+    }
+
+    .activities_schedule {
+        margin-top: 25px;
+        margin-bottom: 30px;
+        float: left;
+        background-color: #0da1ff;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+        .activities_schedule i {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border: 2px solid #FFFFFF;
+            padding: 15px 15px 15px 15px;
+            font-size: 26px;
+        }
+
+        .activities_schedule h5 {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .activities_schedule p {
+            /*padding-top: 15px;*/
+            padding: 10px 15px 30px 15px;
+            font-size: 14px;
+            letter-spacing: -1px;
+        }
+
+    .pricing-title {
+        padding: 25px 15px 25px 15px;
+        background-color: #0da1ff;
+        color: #FFFFFF;
+    }
+
+        .pricing-title h3 {
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .pricing-title span {
+            font-size: 14px;
+        }
+
+    .pricing-price1 {
+        float: left;
+        background-color: #f6f6f6;
+        ;
+    }
+
+    .pricing-price2 {
+        background-color: #efefef;
+        float: right;
+    }
+
+    .pricing-price p {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .pricing-price span {
+        padding-bottom: 50px;
+    }
+</style>
+<section class="section2" style="margin-top: 100px">
+    <div class="container">
+        <div class="row">
+            <div class="banner-activities">
+                <h2 style="float: left">Subject Details</h2>
+                <div class="breadcrumb" style="padding-top: 12px;">
+                    <a href="#">Home</a>&gt
+                    <a href="#">Subject</a>&gt
+                    <span class="default"><h4>Subject Details</h4></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section style="m">
+    <div class="container">
+        <div class="row">
+            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/participant_swimming.jpg" />
+        </div>
+    </div>
+</section>
+
+<section class="section3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12" style="padding-top: 35px">
+                <div class="list-menu col-xl-4" style="float: left">
+                    <ul>
+                        <li><a href="#">Style</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Grooming</a></li>
+                        <li><a href="#">Culture</a></li>
+                        <li><a href="#">Gift Guides</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                @foreach (var p in Model.Subjects)
+                {
+                    <div class="content-sec3 col-xl-8" style="float: right;padding-left: 50px;">
+                        <h2>@p.Name</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu felis ut nunc interdum cursus. Nunc fermentum nec turpis nec sodales. Integer commodo et ante et ultricies. Duis pulvinar, lacus vel posuere auctor, ligula metus volutpat purus, quis venenatis arcu mauris nec tellus. In vel nulla purus. Donec interdum nec augue ac faucibus. Morbi id bibendum dui. Vivamus lobortis massa ac elit egestas, quis suscipit purus imperdiet. Vivamus pellentesque erat ac lectus elementum, at mollis est bibendum.</p>
+
+                        <h2>Activities schedule</h2>
+
+                        <div class="activities_schedule col-xl-4">
+                            <i class='fas fa-hands-helping'></i>
+                            <h5>Choose your sport</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.</p>
+                        </div>
+                        <div class="activities_schedule col-xl-4" style="background-color: #0d88d6">
+                            <i class='fas fa-book-reader'></i>
+                            <h5>Train professionally</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.</p>
+                        </div>
+                        <div class="activities_schedule col-xl-4" style="background-color: #0B7CC4">
+                            <i class='fas fa-star'></i>
+                            <h5>Become a Pro</h5>
+                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.</p>
+                        </div>
+
+                    </div>
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
