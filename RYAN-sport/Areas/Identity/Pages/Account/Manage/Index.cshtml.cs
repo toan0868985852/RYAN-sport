@@ -36,6 +36,21 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Sex")]
+            public string Sex { get; set; }
+
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Address")]
+            public string Address { get; set; }
+
+            [Required]
+            [DataType(DataType.Date)]
+            [Display(Name = "Birthday")]
+            public string Birthday { get; set; }
         }
 
         private async Task LoadAsync(AplicationtUser user)
@@ -47,7 +62,10 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                Sex = user.Sex,
+                Address = user.Address,
+                Birthday = user.Birthday
             };
         }
 
@@ -87,6 +105,23 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }
+
+            if (Input.Sex != user.Sex)
+            {
+                user.Sex = Input.Sex;
+            }
+
+            if (Input.Address != user.Address)
+            {
+                user.Address = Input.Address;
+            }
+
+            if (Input.Birthday != user.Birthday)
+            {
+                user.Birthday = Input.Birthday;
+            }
+
+            await _userManager.UpdateAsync(user);
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
