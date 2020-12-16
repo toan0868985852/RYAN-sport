@@ -1,73 +1,96 @@
-﻿@model SubjectListViewModel
-<div class="sb-price" >
-    <div class="container">
-        <div class="row">
-            <div class="details col-xl-12" style="flex-wrap: wrap;">
-                <style>
-                    .first-details {
-                        width: 365px;
-                        height: 535px;
-                        margin-bottom: 45px;
-                    }
-
-                    .details-price span {
-                        font-size: 20px;
-                        color: #2D2D2D;
-                        font-weight: 600;
-                    }
-
-                    .details {
-                        display: flex;
-                        justify-content: space-around;
-                    }
-
-                    .first-content a {
-                        text-decoration: none;
-                        border: 1px solid gray;
-                        background: gray;
-                        color: white;
-                        padding: 10px 126px;
-                         margin-left: 0px;
-                        position: relative;
-                        top: 30px;
-                    }
-                    .btn-group > .btn-group:not(:last-child) > .btn, .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
-                        margin-left: 40vw;
-                        margin-right: 20px;
-                    }
-                </style>
-                @foreach (var p in Model.Subjects)
-                {
-                    <div class="first-details col-xl-4" style="margin-top: 20px; padding-top: 10px ">
-                        <img style="width: 100%; height: 291px" src="@p.ImgSubject" />
-                        <div class="first-content">
-                            <h3>@p.Name</h3>
-                            <span>Training Center</span>
-                            <p style="padding-top: 0px;padding-top: 0px; height: 30px; width: 100%;overflow: hidden;text-overflow: ellipsis;">
-                                @p.Description
-                            </p>
-                            <div class="details-price">
-                                <span>$&nbsp;@p.Price</span> -
-                                <i class='far fa-clock'>&nbsp;@p.Time &nbsp;Days</i>
-                            </div>
-                            <a class="regiter" href="DetailSubject/Id=@p.ID" style="padding: 10px 112px">Register</a>
-                        </div>
-                    </div>
-                }
-
-
+﻿<link rel="stylesheet" href="~/css/form.css" />
+<div class="form">
+    <section class="locarion">
+        <div class="content">
+            <h1>OUR LOCATION</h1>
+            <div class="locarion-content">
+                <i class="fa fa-rocket"></i>
+                <p class="locarion-text">
+                    No: 58 A, East Madison St Baltimore, MD, USA
+                </p>
             </div>
-
-            <div page-model="@Model.PagingInfo" page-action="Index"
-                 page-classes-enabled="true"
-                 page-class="btn" page-class-normal="btn-outline-dark"
-                 page-class-selected="btn-primary"
-                 page-url-category="@Model.CurrentCategory"
-                 class="btn-group pull-right m-1" style="width:100px"></div>
+            <div class="locarion-content">
+                <i class="fa fa-rocket"></i>
+                <p class="locarion-text">
+                    Entrance Gym CS Nagar 2nd Cross, Vadavalli, Cbe, TN, IND
+                </p>
+            </div>
         </div>
-    </div>
-</div>
+        <div class="content">
+            <h1>CONTACT US</h1>
+            <p>
+                <i class="fa fa-envelope"></i>
+                <a href="#">yourname@somemail.com</a>
+            </p>
+            <p>
+                <i class="fa fa-phone"></i>
+                <span> +1 200 258 2145 </span>
+            </p>
+            <p>
+                <i class="fa fa-globe"></i>
+                <a href="http://www.google.com/">google.com</a>
+            </p>
+        </div>
+        <div class="content">
+            <h1>CONSULTING TIME</h1>
+            <div class="content-contructing">
+                <div class="content-day">
+                    <b>Monday - Friday</b>
+                    <b>Saturday</b>
+                    <b>Sunday</b>
+                </div>
+                <div class="content-time">
+                    <b>16:00 - 20:00</b>
+                    <b>10:00 - 20:00</b>
+                    <b>10:00 - 14:00</b>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="enquyry-form">
+        <form action="" method="get">
+            <h1>ENQUIRY FORM</h1>
+            <div class="form-label">
+                <div class="form-left">
+                    <label>
+                        <input type="text" placeholder="First name" />
+                        <i class="fa fa-user"></i>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Last name" />
+                        <i class="fa fa-user"></i>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Email" />
+                        <i class="fa fa-envelope"></i>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Phone" />
+                        <i class="fa fa-phone"></i>
+                    </label>
+                </div>
+                <div class="form-left">
+                    <label>
+                        <input type="text" placeholder="Address 1" />
+                        <i class="fa fa-compass"></i>
+                    </label>
+                    <label>
+                        <input type="text" placeholder="Address 2" />
+                        <i class="fa fa-compass"></i>
+                    </label>
 
+                    <label>
+                        <textarea placeholder="Message"></textarea>
+                        <i class="fa fa-edit"></i>
+                    </label>
+                </div>
+            </div>
+            <div class=button>
+                <button>SUBMIT FORM</button>
+            </div>
+        </form>
+    </section>
+</div>
 <footer>
     <div class="container">
         <div class="row">

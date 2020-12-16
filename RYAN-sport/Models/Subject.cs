@@ -19,6 +19,7 @@ namespace RYAN_sport.Models
         public string ImgSubject { get; set; }
 
         public virtual ICollection<LevelSubject> LevelSubjects { get; set; }
+        //public virtual ICollection<Galery> Galeries { get; set; }
         public virtual ICollection<SubjectSportRoom> SubjectSportRooms { get; set; }
     }
 }

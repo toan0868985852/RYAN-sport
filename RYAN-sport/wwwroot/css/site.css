@@ -20,11 +20,14 @@ a.navbar-brand {
     border-color: #0bc5ef;
 }
 
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #30363c;
+    border-color: #30363c;
 }
+
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
