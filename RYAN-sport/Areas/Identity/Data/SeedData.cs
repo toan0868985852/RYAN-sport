@@ -210,7 +210,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 100.00M,
                         Time = "9 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic1.jpg",
-                        Category = "Indoor Sports, Outdoor Sports"
+                        ImgSubjectDetail = "https://raw.githubusercontent.com/nddat1908/T1908A_Sem3/master/ImageSubjectRYAN/cycling.png",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -219,6 +220,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 1500.00M,
                         Time = "12 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic2.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/golf.png?raw=true",
                         Category = "Outdoor Sports"
                     },
                     new Subject
@@ -228,6 +230,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 75.00M,
                         Time = "6 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic3.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/participant_swimming.jpg?raw=true",
                         Category = "Outdoor Sports"
                     },
                     new Subject
@@ -237,6 +240,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 170.00M,
                         Time = "12 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic4.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/tennis.png?raw=true",
                         Category = "Outdoor Sports"
                     },
                     new Subject
@@ -246,6 +250,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 50.00M,
                         Time = "12 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic5.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/run.png?raw=true",
                         Category = "Indoor Sports"
                     },
                     new Subject
@@ -255,6 +260,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 90.00M,
                         Time = "9 months",
                         ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic6.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/weight.png?raw=true",
                         Category = "Indoor Sports"
                     },
                     new Subject
@@ -264,6 +270,7 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 90.00M,
                         Time = "8 months",
                         ImgSubject = "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.15752-9/p1080x2048/129882239_425010888538704_1132306281933710718_n.jpg?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=-x-cmwLErNsAX-8e0Dd&_nc_ht=scontent.fhan2-6.fna&tp=6&oh=005fd4a56ffca8a8e95438c1d77e1aeb&oe=5FF7CE8E",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/football1.png?raw=true",
                         Category = "Indoor Sports"
                     },
                     new Subject
@@ -273,24 +280,37 @@ namespace RYAN_sport.Areas.Identity.Data
                         Price = 90.00M,
                         Time = "8 months",
                         ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/badminton.png?raw=true",
                         Category = "Indoor Sports"
                     },
                     new Subject
                     {
-                        Name = "BADMINTON",
-                        Description = "At Badminton England, we are proud to support and have a vast network of qualified coaches that can offer coaching to help players learn, improve and master badminton skills whatever their playing experience or level.If you are trying to find a badminton coach for private, group or club coaching sessions then please use the coach search tool below.This lists all members of the Badminton England Coach Accreditation scheme, their qualification, any CPD completed as well as their contact details should they be happy to be contacted directly regarding coaching opportunities.",
+                        Name = "MUAY Thai",
+                        Description = "Muay Thai comes from 'Krabi Krabong', an ancient Siam (SIAM, Old name of Thailand) martial art with the martial arts of royal soldiers with swords in their right hand, the martial art becomes A familiar martial art among the people, is kept as a combat sport, and becomes a pride of the Thai people. The attack method of this martial art includes using the head to hit, biting the mouth, fists, using elbows, knees to hit, hooking eyes as well as kicking, kicking ... Muay Thai is formed from the martial arts mentioned above. Therefore it is also known as The Right of Thai Freedom",
                         Price = 90.00M,
-                        Time = "31 months",
-                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg",
+                        Time = "20 months",
+                        ImgSubject = "https://images.pexels.com/photos/4651305/pexels-photo-4651305.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/muay.png?raw=true",
                         Category = "Indoor Sports"
                     },
                     new Subject
                     {
                         Name = "BASEKETBALL",
-                        Description = "Huấn luyện viên bóng rổ là hoạt động chỉ đạo và lập chiến lược hành vi của một đội bóng rổ hoặc cá nhân cầu thủ bóng rổ. Huấn luyện bóng rổ thường bao gồm việc cải thiện các kỹ năng tấn công và phòng thủ của cá nhân và đồng đội, cũng như điều kiện thể chất tổng thể. Huấn luyện viên cũng có trách nhiệm cải thiện đội của họ bằng cách phát triển người chơi, chiến lược và quản lý trong trò chơi. Huấn luyện viên cũng dạy và truyền cảm hứng để đội của họ hoạt động tốt nhất.Huấn luyện thường được thực hiện bởi một người duy nhất,thường với sự giúp đỡ của một hoặc nhiều trợ lý.",
+                        Description = "Basketball coach is the act of directing and strategizing the behavior of a basketball team or individual basketball player. Basketball coaching often involves improving individual and team attack and defense skills, as well as overall physical condition. Coaches are also responsible for improving their team by player development, strategy, and management in the game. Coaches also teach and inspire their team to perform at its best. Coaching is usually done by a single person, often with the help of one or more assistants.",
                         Price = 90.00M,
                         Time = "10 months",
                         ImgSubject = "https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1581678662/DCUK/Content/iStock-959080376.jpg",
+                        ImgSubjectDetail = "https://raw.githubusercontent.com/nddat1908/T1908A_Sem3/master/ImageSubjectRYAN/basketball.png",
+                        Category = "Indoor Sports"
+                    },
+                    new Subject
+                    {
+                        Name = "CLIMB THE MOUNTSIN",
+                        Description = "Whoever you are, whether you've never climbed the mountain or conquered the toughest peaks, our indoor climbing center, I can provide you with everything you need to hone your climbing skills, hone every movement on the vertical climbing walls. The climbing path is marked with six different colors, based on the Fontainebleau scale. And lots of new climbing tracks are added every week, guaranteeing the best experience possible.",
+                        Price = 150.00M,
+                        Time = "4 months",
+                        ImgSubject = "https://images.pexels.com/photos/4045339/pexels-photo-4045339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                        ImgSubjectDetail = "https://github.com/nddat1908/T1908A_Sem3/blob/master/ImageSubjectRYAN/leonui.png?raw=true",
                         Category = "Indoor Sports"
                     }
 

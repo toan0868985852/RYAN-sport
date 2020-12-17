@@ -233,15 +233,23 @@
     .pricing-price span {
         padding-bottom: 50px;
     }
+
+    header {
+        margin: 0px;
+        width: 100%;
+        border-radius: 0px;
+        height: 92px;
+        background: #30363cf5;
+    }
 </style>
-<section class="section2" style="margin-top: 100px">
+<section class="section2">
     <div class="container">
         <div class="row">
             <div class="banner-activities">
                 <h2 style="float: left">Subject Details</h2>
                 <div class="breadcrumb" style="padding-top: 12px;">
-                    <a href="#">Home</a>&gt
-                    <a href="#">Subject</a>&gt
+                    <a href="~/">Home</a>&gt
+                    <a href="~/Subject">Subject</a>&gt
                     <span class="default">
                         <h4>Subject Details</h4>
                     </span>
@@ -255,7 +263,11 @@
 <section>
     <div class="container">
         <div class="row">
-            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/participant_swimming.jpg" />
+            @foreach (var t in Model.Subjects)
+            {
+                <img style="margin-top:-47px" src="@t.ImgSubjectDetail" />
+            }
+
         </div>
     </div>
 </section>
@@ -266,12 +278,15 @@
             <div class="col-xl-12" style="padding-top: 35px">
                 <div class="list-menu col-xl-4" style="float: left">
                     <ul>
-                        <li><a href="#">Style</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Grooming</a></li>
-                        <li><a href="#">Culture</a></li>
-                        <li><a href="#">Gift Guides</a></li>
-                        <li><a href="#">Pricing</a></li>
+                        <li><a href="~/DetailSubject/Id=1">BASEKETBALL</a></li>
+                        <li><a href="~/DetailSubject/Id=2">BADMINTON</a></li>
+                        <li><a href="~/DetailSubject/Id=4">FOOTBAll</a></li>
+                        <li><a href="~/DetailSubject/Id=5">WEIGHT TRAINING</a></li>
+                        <li><a href="~/DetailSubject/Id=6">TRACKS TRAINING</a></li>
+                        <li><a href="~/DetailSubject/Id=7">TENNIS</a></li>
+                        <li><a href="~/DetailSubject/Id=8">SWIMMING</a></li>
+                        <li><a href="~/DetailSubject/Id=9">GOLF</a></li>
+                        <li><a href="~/DetailSubject/Id=10">CYCING</a></li>
                     </ul>
                 </div>
                 @foreach (var p in Model.Subjects)
@@ -300,10 +315,85 @@
 
                     </div>
                 }
-            
+
                 <div class="fb-comments" data-href="https://toan0868985852.github.io/TodoApp-reactjs/" data-numposts="5" data-width="" style="margin-left:32vw; margin-bottom: 80px"></div>
-            
+
             </div>
         </div>
     </div>
 </section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Ryan</h3>
+                <p style="font-size: 14px; line-height: 2">
+                    The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters, as opposed to using 'Content here,
+                    making it look like readable English.
+                </p>
+                <p class="icon-footer">
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i style="width: 15px" class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a href="#"><i style="width: 15px" class="fab fa-twitter"></i></a>
+                    <a href="#"><i style="width: 15px" class="fab fa-youtube"></i></a>
+                </p>
+
+                <p></p>
+            </div>
+
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase">Useful links</h3>
+                <ul>
+                    <li><a href="#">Membership Offers</a></li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Training Schedule</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Inter Competitions</a>
+                    </li>
+                    <li>
+                        <a style="border-top: solid 1px #f4f4f4" href="#">Awards & Trophies</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column1 col-xl-3" style="width: 22%">
+                <h3 style="text-transform: uppercase" ;>Latest posts</h3>
+                <img src="~/imgLogin/basketball-team-70x60.jpg" />
+                <div style="float: right; margin-top: -10px; margin-right: 5px">
+                    <h4><a href="#">Basketball Team</a></h4>
+                    <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                        11 Feb 2015
+                    </p>
+                </div>
+                <div>
+                    <img src="~/imgLogin/golf-70x60.jpg" style="padding-top: 15px" />
+                    <div style="float: right; margin-top: 10px; padding-right: 20px">
+                        <h4><a href="#">Tee Shot Zone</a></h4>
+                        <p style="font-size: 13px; margin-top: -26px; padding-left: 16px">
+                            11 Feb 2015
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column1 col-xl-3" style="width: 22%; float: right">
+                <h3 style="text-transform: uppercase">About ryan</h3>
+                <ul style="list-style: none; padding: 0">
+                    <li>Monday - Friday<span>04:00 - 12:00</span></li>
+                    <li style="
+                  border-top: 1px solid #f4f4f4;
+                  border-bottom: 1px solid #f4f4f4;
+                ">
+                        Saturday<span>14:00 - 21:00</span>
+                    </li>
+                    <li>Sunday<span>Holiday</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

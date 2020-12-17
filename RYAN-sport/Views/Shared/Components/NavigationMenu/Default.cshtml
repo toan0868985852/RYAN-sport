@@ -1,8 +1,18 @@
 ﻿@model IEnumerable<string>
 
+<style>
+    a:nth-child(2) {
+        margin-top: 8px
+    }
+</style>
+
 @foreach (string category in Model)
 {
-    <a class="btn btn-block @(category == ViewBag.SelectedCategory
+    <a style="width: 300px;
+        border: 5px solid #6c757d;
+        font-size: 18px;
+        margin: 20px;
+        letter-spacing: -1px;" class="btn btn-block @(category == ViewBag.SelectedCategory
     ? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index" asp-controller="Subject"
        asp-route-category="@category"
