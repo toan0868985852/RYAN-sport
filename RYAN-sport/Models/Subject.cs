@@ -17,6 +17,7 @@ namespace RYAN_sport.Models
         public string Time { get; set; }
         public string Category { get; set; }
         public string ImgSubject { get; set; }
+        public string ImgSubjectDetail { get; set; }
 
         public virtual ICollection<LevelSubject> LevelSubjects { get; set; }
         //public virtual ICollection<Galery> Galeries { get; set; }

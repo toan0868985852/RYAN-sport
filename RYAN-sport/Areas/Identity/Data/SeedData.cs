@@ -209,7 +209,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "Your personal cycling coach will design a training program that matches your fitness level, is tailored your cycling goals, and fits around your busy schedule.  ",
                         Price = 100.00M,
                         Time = "9 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic1.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic1.jpg",
+                        Category = "Indoor Sports, Outdoor Sports"
                     },
                     new Subject
                     {
@@ -217,7 +218,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "The most common complaint I hear from recreational golfers is that their game simply doesn’t transfer from the lesson tee or the practice range to the golf course. They might experience some success in a lesson environment, hit a couple of great shots in a row with their coach present—or when trying out the latest swing tip they read in one of the instruction magazines—but when it comes time to deliver on the course, the same old swing flaws resurface. The high, 5-yard draw they thought they had mastered on the lesson tee is back to being a weak, stomach curdling 20-yard slice.",
                         Price = 1500.00M,
                         Time = "12 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic2.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic2.jpg",
+                        Category = "Outdoor Sports"
                     },
                     new Subject
                     {
@@ -225,7 +227,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "Becoming a swimming coach is popular across the UK. Nothing quite beats the thrill of a competitive race, and so swimmers often decide to become coaches after calling time on their competitive careers.But it’s not just a former swimmer that ends up becoming a swimming coach; there are plenty of British coaches with no previous experience of competitive swimming.",
                         Price = 75.00M,
                         Time = "6 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic3.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic3.jpg",
+                        Category = "Outdoor Sports"
                     },
                     new Subject
                     {
@@ -233,7 +236,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "In tennis, as in any sport, the role of the coach is an important one. A good coach not only can get others interested in playing a sport, but also plays an important role in motivating players and teaching the skills that a player will use for a lifetime. The best coaches also serve as role models and demonstrate the behaviors that players will want to emulate.",
                         Price = 170.00M,
                         Time = "12 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic4.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic4.jpg",
+                        Category = "Outdoor Sports"
                     },
                     new Subject
                     {
@@ -241,7 +245,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "A coach at your side during your run will give you direct feedback on form, technique, and pacing. You will also learn numerous warm-up and cool-down drills and routines to incorporate into your daily training.Our personal coaching service gives you an experienced running coach to plan your training and for personal support to talk about race strategy, performance nutrition, injury prevention, stretching, and much more.And best of all, communication is unlimited.The ultimate coaching experience.",
                         Price = 50.00M,
                         Time = "12 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic5.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic5.jpg",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -249,7 +254,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "The coaching pathway provides the only qualifications that are recognised for our exclusive coach license scheme and cover the official BWL Technical Models. We have created coach training programmes, that produce world-class weightlifting coaches who help to develop medal winning athletes. The skills learned during BWL coaching courses are invaluable in understanding the sport of weightlifting, but they can also be applied across all types and levels of physical activity to improve strength and conditioning. We work in partnership with Focus Awards (regulated awarding body) to accredit our qualifications.",
                         Price = 90.00M,
                         Time = "9 months",
-                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic6.jpg"
+                        ImgSubject = "https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/pic6.jpg",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -257,7 +263,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "My Coach Football allows you to manage and organize the daily operations of your football team, day after day, season after season. Designed to answer amateur and professional coaches’ needs, the platform centralizes all of your squad’s information and allows to gain time and efficiency. In a single click, you can manage players and their personal information, the preparation of training and games, but also individual and collective statistics. Season after season, you keep all those data and hence enjoy an optimum tracking of your team’s progression.",
                         Price = 90.00M,
                         Time = "8 months",
-                        ImgSubject = "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.15752-9/p1080x2048/129882239_425010888538704_1132306281933710718_n.jpg?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=-x-cmwLErNsAX-8e0Dd&_nc_ht=scontent.fhan2-6.fna&tp=6&oh=005fd4a56ffca8a8e95438c1d77e1aeb&oe=5FF7CE8E"
+                        ImgSubject = "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.15752-9/p1080x2048/129882239_425010888538704_1132306281933710718_n.jpg?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=-x-cmwLErNsAX-8e0Dd&_nc_ht=scontent.fhan2-6.fna&tp=6&oh=005fd4a56ffca8a8e95438c1d77e1aeb&oe=5FF7CE8E",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -265,7 +272,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "At Badminton England, we are proud to support and have a vast network of qualified coaches that can offer coaching to help players learn, improve and master badminton skills whatever their playing experience or level.If you are trying to find a badminton coach for private, group or club coaching sessions then please use the coach search tool below.This lists all members of the Badminton England Coach Accreditation scheme, their qualification, any CPD completed as well as their contact details should they be happy to be contacted directly regarding coaching opportunities.",
                         Price = 90.00M,
                         Time = "8 months",
-                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg"
+                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -273,7 +281,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "At Badminton England, we are proud to support and have a vast network of qualified coaches that can offer coaching to help players learn, improve and master badminton skills whatever their playing experience or level.If you are trying to find a badminton coach for private, group or club coaching sessions then please use the coach search tool below.This lists all members of the Badminton England Coach Accreditation scheme, their qualification, any CPD completed as well as their contact details should they be happy to be contacted directly regarding coaching opportunities.",
                         Price = 90.00M,
                         Time = "31 months",
-                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg"
+                        ImgSubject = "https://images.indianexpress.com/2020/04/badminton-bai-bwf-fb.jpg",
+                        Category = "Indoor Sports"
                     },
                     new Subject
                     {
@@ -281,7 +290,8 @@ namespace RYAN_sport.Areas.Identity.Data
                         Description = "Huấn luyện viên bóng rổ là hoạt động chỉ đạo và lập chiến lược hành vi của một đội bóng rổ hoặc cá nhân cầu thủ bóng rổ. Huấn luyện bóng rổ thường bao gồm việc cải thiện các kỹ năng tấn công và phòng thủ của cá nhân và đồng đội, cũng như điều kiện thể chất tổng thể. Huấn luyện viên cũng có trách nhiệm cải thiện đội của họ bằng cách phát triển người chơi, chiến lược và quản lý trong trò chơi. Huấn luyện viên cũng dạy và truyền cảm hứng để đội của họ hoạt động tốt nhất.Huấn luyện thường được thực hiện bởi một người duy nhất,thường với sự giúp đỡ của một hoặc nhiều trợ lý.",
                         Price = 90.00M,
                         Time = "10 months",
-                        ImgSubject = "https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1581678662/DCUK/Content/iStock-959080376.jpg"
+                        ImgSubject = "https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1581678662/DCUK/Content/iStock-959080376.jpg",
+                        Category = "Indoor Sports"
                     }
 
 

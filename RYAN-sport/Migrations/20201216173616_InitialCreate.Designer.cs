@@ -10,7 +10,7 @@ using RYAN_sport.Data;
 namespace RYAN_sport.Migrations
 {
     [DbContext(typeof(RYAN_sportDBContext))]
-    [Migration("20201212065130_InitialCreate")]
+    [Migration("20201216173616_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -360,6 +360,9 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImgSubject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgSubjectDetail")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

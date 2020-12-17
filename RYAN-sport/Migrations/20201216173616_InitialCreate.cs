@@ -105,7 +105,8 @@ namespace RYAN_sport.Migrations
                     Price = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
                     Time = table.Column<string>(nullable: true),
                     Category = table.Column<string>(nullable: true),
-                    ImgSubject = table.Column<string>(nullable: true)
+                    ImgSubject = table.Column<string>(nullable: true),
+                    ImgSubjectDetail = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
