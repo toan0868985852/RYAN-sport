@@ -48,39 +48,39 @@
         </div>
     </section>
     <section class="enquyry-form">
-        <form action="" method="get">
+        <form asp-action="Create" asp-controller="Contact" method="post">
             <h1>ENQUIRY FORM</h1>
             <div class="form-label">
                 <div class="form-left">
                     <label>
-                        <input type="text" placeholder="First name" />
+                        <input type="text" placeholder="First name" name="FirstName"/>
                         <i class="fa fa-user"></i>
                     </label>
                     <label>
-                        <input type="text" placeholder="Last name" />
+                        <input type="text" placeholder="Last name" name="LastName"/>
                         <i class="fa fa-user"></i>
                     </label>
                     <label>
-                        <input type="text" placeholder="Email" />
+                        <input type="text" placeholder="Email" name="Email"/>
                         <i class="fa fa-envelope"></i>
                     </label>
                     <label>
-                        <input type="text" placeholder="Phone" />
+                        <input type="text" placeholder="Phone" name="PhoneNumber"/>
                         <i class="fa fa-phone"></i>
                     </label>
                 </div>
                 <div class="form-left">
                     <label>
-                        <input type="text" placeholder="Address 1" />
+                        <input type="text" placeholder="Address 1" name="Address01"/>
                         <i class="fa fa-compass"></i>
                     </label>
                     <label>
-                        <input type="text" placeholder="Address 2" />
+                        <input type="text" placeholder="Address 2" name="Address02"/>
                         <i class="fa fa-compass"></i>
                     </label>
 
                     <label>
-                        <textarea placeholder="Message"></textarea>
+                        <textarea placeholder="Message" name="Messenger"></textarea>
                         <i class="fa fa-edit"></i>
                     </label>
                 </div>

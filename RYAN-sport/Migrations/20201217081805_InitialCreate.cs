@@ -52,6 +52,25 @@ namespace RYAN_sport.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(101)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(101)", nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    Address01 = table.Column<string>(nullable: true),
+                    Address02 = table.Column<string>(nullable: true),
+                    Messenger = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Galeries",
                 columns: table => new
                 {
@@ -412,6 +431,9 @@ namespace RYAN_sport.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "Galeries");

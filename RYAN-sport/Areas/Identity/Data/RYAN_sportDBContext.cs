@@ -24,6 +24,7 @@ namespace RYAN_sport.Data
         public DbSet<SubjectSportRoom> SubjectSportRooms { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Galery> Galeries { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

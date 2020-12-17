@@ -23,5 +23,6 @@ namespace RYAN_sport.Areas.Identity.Data
         public IQueryable<SubjectSportRoom> SubjectSportRooms => context.SubjectSportRooms;
         public IQueryable<Subscription> Subscriptions => context.Subscriptions;
         public IQueryable<Galery> Galeries => context.Galeries;
+        public IQueryable<Contact> Contacts => context.Contacts;
     }
 }

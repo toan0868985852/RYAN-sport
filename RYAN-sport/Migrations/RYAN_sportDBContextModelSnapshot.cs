@@ -265,6 +265,39 @@ namespace RYAN_sport.Migrations
                     b.ToTable("Cards");
                 });
 
+            modelBuilder.Entity("RYAN_sport.Models.Contact", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address01")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Address02")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(101)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(101)");
+
+                    b.Property<string>("Messenger")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("RYAN_sport.Models.Galery", b =>
                 {
                     b.Property<int>("GaleryID")
