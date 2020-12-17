@@ -12,6 +12,8 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
 
         public static string Email => "Email";
 
+        public static string Membership => "Membership";
+
         public static string ChangePassword => "ChangePassword";
 
         public static string DownloadPersonalData => "DownloadPersonalData";
@@ -25,6 +27,8 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
         public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
+
+        public static string MembershipNavClass(ViewContext viewContext) => PageNavClass(viewContext, Membership);
 
         public static string EmailNavClass(ViewContext viewContext) => PageNavClass(viewContext, Email);
 

@@ -147,35 +147,35 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
-            //if (!context.Subscriptions.Any())
-            //{
-            //    context.Subscriptions.AddRange(
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("2019-12-22"),
-            //            EndDate = DateTime.Parse("2020-12-22")
-            //        },
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("2020-02-25"),
-            //            EndDate = DateTime.Parse("2021-02-25")
-            //        }, new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("9-10-2019"),
-            //            EndDate = DateTime.Parse("9-10-2020")
-            //        }, new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("11-12-2019"),
-            //            EndDate = DateTime.Parse("11-12-2021")
-            //        },
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("9-12-2019"),
-            //            EndDate = DateTime.Parse("9-12-2020")
-            //        }
-            //    );
-            //    context.SaveChanges();
-            //}
+            if (!context.Subscriptions.Any())
+            {
+                context.Subscriptions.AddRange(
+                    new Subscription
+                    {
+                        RegistrationDate = DateTime.Parse("2019-12-22"),
+                        EndDate = DateTime.Parse("2020-12-22")
+                    }
+                    //new Subscription
+                    //{
+                    //    RegistrationDate = DateTime.Parse("2020-02-25"),
+                    //    EndDate = DateTime.Parse("2021-02-25")
+                    //}, new Subscription
+                    //{
+                    //    RegistrationDate = DateTime.Parse("9-10-2019"),
+                    //    EndDate = DateTime.Parse("9-10-2020")
+                    //}, new Subscription
+                    //{
+                    //    RegistrationDate = DateTime.Parse("11-12-2019"),
+                    //    EndDate = DateTime.Parse("11-12-2021")
+                    //},
+                    //new Subscription
+                    //{
+                    //    RegistrationDate = DateTime.Parse("9-12-2019"),
+                    //    EndDate = DateTime.Parse("9-12-2020")
+                    //}
+                );
+                context.SaveChanges();
+            }
 
             if (!context.Levels.Any())
             {
@@ -464,15 +464,17 @@ namespace RYAN_sport.Areas.Identity.Data
             }
      
 
-            if (!context.Cards.Any())
-            {
-                context.Cards.AddRange(
-                    new Card
-                    {
-                        NumberCard = "RYAN120046556",
-                        LevelId = 1
+            //if (!context.Cards.Any())
+            //{
+            //    context.Cards.AddRange(
+            //        new Card
+            //        {
+            //            NumberCard = "RYAN120046556",
+            //            LevelId = 1,
+            //            UserId = 1,
+            //            SubscriptionId = 1,
                         
-                    }
+            //        }
                     //new Card
                     //{
                     //    NumberCard = "RYAN120046557",
@@ -497,9 +499,9 @@ namespace RYAN_sport.Areas.Identity.Data
                     //    UserId = "",
                     //    LevelId = 3
                     //}
-                );
-                context.SaveChanges();
-            }
+            //    );
+            //    context.SaveChanges();
+            //}
         }
     }
 }

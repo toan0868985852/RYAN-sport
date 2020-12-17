@@ -10,7 +10,7 @@ using RYAN_sport.Data;
 namespace RYAN_sport.Migrations
 {
     [DbContext(typeof(RYAN_sportDBContext))]
-    [Migration("20201217081805_InitialCreate")]
+    [Migration("20201217100404_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -255,6 +255,9 @@ namespace RYAN_sport.Migrations
                     b.Property<string>("NumberCard")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SubscriptionId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
@@ -263,6 +266,8 @@ namespace RYAN_sport.Migrations
                     b.HasIndex("AplicationtUserId");
 
                     b.HasIndex("LevelId");
+
+                    b.HasIndex("SubscriptionId");
 
                     b.ToTable("Cards");
                 });
@@ -441,9 +446,6 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CardId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -451,8 +453,6 @@ namespace RYAN_sport.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CardId");
 
                     b.ToTable("Subscriptions");
                 });
@@ -519,6 +519,12 @@ namespace RYAN_sport.Migrations
                         .HasForeignKey("LevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("RYAN_sport.Models.Subscription", "Subscriptions")
+                        .WithMany("Card")
+                        .HasForeignKey("SubscriptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RYAN_sport.Models.LevelSubject", b =>
@@ -547,15 +553,6 @@ namespace RYAN_sport.Migrations
                     b.HasOne("RYAN_sport.Models.Subject", "Subject")
                         .WithMany("SubjectSportRooms")
                         .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("RYAN_sport.Models.Subscription", b =>
-                {
-                    b.HasOne("RYAN_sport.Models.Card", "Card")
-                        .WithMany("Subscriptions")
-                        .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

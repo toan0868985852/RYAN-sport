@@ -1,0 +1,17 @@
+﻿@page
+@model MembershipModel
+@{
+    ViewData["Title"] = "Manage Email";
+    ViewData["ActivePage"] = ManageNavPages.Email;
+}
+
+<label asp-for="Username"></label>
+<input asp-for="Username" class="form-control" disabled />
+
+@foreach (var p in Model.Card)
+{
+    @p.NumberCard
+    @p.Level.Name
+    @p.Subscriptions.RegistrationDate
+    @p.Subscriptions.EndDate
+}
