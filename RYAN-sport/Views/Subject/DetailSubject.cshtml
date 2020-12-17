@@ -255,7 +255,10 @@
 <section>
     <div class="container">
         <div class="row">
-            <img src="https://1bubze2sol6cfove63681xma-wpengine.netdna-ssl.com/wp-content/uploads/2015/12/participant_swimming.jpg" />
+            @foreach (var t in Model.Subjects)
+            {
+                <img src="@t.ImgSubjectDetail" />
+            }
         </div>
     </div>
 </section>
