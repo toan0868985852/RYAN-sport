@@ -176,11 +176,3 @@ button {
     padding: 15px 25px;
     cursor: pointer;
 }
-
-header{
-    margin-top:-105px
-}
-
-    header.sticky {
-        margin-top: -112px
-    }
