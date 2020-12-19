@@ -42,7 +42,7 @@ namespace RYAN_sport.Areas.Identity.Pages.Account.Manage
 
             Username = userName;
 
-            Card = _context.Cards.Where(p => p.UserId == user.Id);
+            Card = _context.Cards.Where(p => p.AplicationtUserId == user.Id);
         }
 
         public void OnGet()

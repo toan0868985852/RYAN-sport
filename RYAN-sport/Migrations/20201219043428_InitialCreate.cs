@@ -133,20 +133,6 @@ namespace RYAN_sport.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subscriptions",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RegistrationDate = table.Column<DateTime>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Subscriptions", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -253,6 +239,34 @@ namespace RYAN_sport.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Cards",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AplicationtUserId = table.Column<string>(nullable: true),
+                    LevelId = table.Column<int>(nullable: false),
+                    NumberCard = table.Column<string>(nullable: true),
+                    Date = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cards", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Cards_AspNetUsers_AplicationtUserId",
+                        column: x => x.AplicationtUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Cards_Levels_LevelId",
+                        column: x => x.LevelId,
+                        principalTable: "Levels",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LevelSubjects",
                 columns: table => new
                 {
@@ -305,37 +319,22 @@ namespace RYAN_sport.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cards",
+                name: "Subscriptions",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(nullable: true),
-                    LevelId = table.Column<int>(nullable: false),
-                    SubscriptionId = table.Column<int>(nullable: false),
-                    NumberCard = table.Column<string>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
-                    AplicationtUserId = table.Column<string>(nullable: true)
+                    CardId = table.Column<int>(nullable: false),
+                    RegistrationDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cards", x => x.ID);
+                    table.PrimaryKey("PK_Subscriptions", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Cards_AspNetUsers_AplicationtUserId",
-                        column: x => x.AplicationtUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Cards_Levels_LevelId",
-                        column: x => x.LevelId,
-                        principalTable: "Levels",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Cards_Subscriptions_SubscriptionId",
-                        column: x => x.SubscriptionId,
-                        principalTable: "Subscriptions",
+                        name: "FK_Subscriptions_Cards_CardId",
+                        column: x => x.CardId,
+                        principalTable: "Cards",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -382,17 +381,14 @@ namespace RYAN_sport.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cards_AplicationtUserId",
                 table: "Cards",
-                column: "AplicationtUserId");
+                column: "AplicationtUserId",
+                unique: true,
+                filter: "[AplicationtUserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cards_LevelId",
                 table: "Cards",
                 column: "LevelId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cards_SubscriptionId",
-                table: "Cards",
-                column: "SubscriptionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LevelSubjects_LevelId",
@@ -413,6 +409,12 @@ namespace RYAN_sport.Migrations
                 name: "IX_SubjectSportRooms_SubjectId",
                 table: "SubjectSportRooms",
                 column: "SubjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subscriptions_CardId",
+                table: "Subscriptions",
+                column: "CardId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -433,9 +435,6 @@ namespace RYAN_sport.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Cards");
-
-            migrationBuilder.DropTable(
                 name: "Contacts");
 
             migrationBuilder.DropTable(
@@ -448,22 +447,25 @@ namespace RYAN_sport.Migrations
                 name: "SubjectSportRooms");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "Subscriptions");
 
             migrationBuilder.DropTable(
-                name: "Levels");
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "SportRooms");
 
             migrationBuilder.DropTable(
                 name: "Subjects");
+
+            migrationBuilder.DropTable(
+                name: "Cards");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Levels");
         }
     }
 }

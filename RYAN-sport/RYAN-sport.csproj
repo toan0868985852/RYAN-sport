@@ -39,6 +39,12 @@
     <Compile Remove="Migrations\20201216173616_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20201217081805_InitialCreate.cs" />
     <Compile Remove="Migrations\20201217081805_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201217100404_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201217100404_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201219041409_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201219041409_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201219041647_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201219041647_InitialCreate.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

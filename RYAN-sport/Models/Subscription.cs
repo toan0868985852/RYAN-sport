@@ -9,6 +9,7 @@ namespace RYAN_sport.Models
     public class Subscription
     {
         public int ID { get; set; }
+        public int CardId { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime RegistrationDate { get; set; }
@@ -16,6 +17,6 @@ namespace RYAN_sport.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
-        public virtual ICollection<Card> Card { get; set; }
+        public virtual Card Card { get; set; }
     }
 }

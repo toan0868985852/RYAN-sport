@@ -10,9 +10,8 @@ namespace RYAN_sport.Models
     public class Card
     {
         public int ID { get; set; }
-        public string UserId { get; set; }
+        public string AplicationtUserId { get; set; }
         public int LevelId { get; set; }
-        public int SubscriptionId { get; set; }
         public string NumberCard { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
