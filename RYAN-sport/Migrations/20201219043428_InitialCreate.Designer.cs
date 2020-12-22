@@ -10,7 +10,7 @@ using RYAN_sport.Data;
 namespace RYAN_sport.Migrations
 {
     [DbContext(typeof(RYAN_sportDBContext))]
-    [Migration("20201217081805_InitialCreate")]
+    [Migration("20201219043428_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -255,12 +255,11 @@ namespace RYAN_sport.Migrations
                     b.Property<string>("NumberCard")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("AplicationtUserId");
+                    b.HasIndex("AplicationtUserId")
+                        .IsUnique()
+                        .HasFilter("[AplicationtUserId] IS NOT NULL");
 
                     b.HasIndex("LevelId");
 
@@ -452,7 +451,8 @@ namespace RYAN_sport.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CardId");
+                    b.HasIndex("CardId")
+                        .IsUnique();
 
                     b.ToTable("Subscriptions");
                 });
@@ -511,8 +511,8 @@ namespace RYAN_sport.Migrations
             modelBuilder.Entity("RYAN_sport.Models.Card", b =>
                 {
                     b.HasOne("RYAN_sport.Areas.Identity.Data.AplicationtUser", null)
-                        .WithMany("Cards")
-                        .HasForeignKey("AplicationtUserId");
+                        .WithOne("Cards")
+                        .HasForeignKey("RYAN_sport.Models.Card", "AplicationtUserId");
 
                     b.HasOne("RYAN_sport.Models.Level", "Level")
                         .WithMany("Cards")
@@ -554,8 +554,8 @@ namespace RYAN_sport.Migrations
             modelBuilder.Entity("RYAN_sport.Models.Subscription", b =>
                 {
                     b.HasOne("RYAN_sport.Models.Card", "Card")
-                        .WithMany("Subscriptions")
-                        .HasForeignKey("CardId")
+                        .WithOne("Subscriptions")
+                        .HasForeignKey("RYAN_sport.Models.Subscription", "CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

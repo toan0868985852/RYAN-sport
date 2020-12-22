@@ -18,14 +18,13 @@ namespace RYAN_sport.Areas.Identity.Data
         [Column(TypeName = "nvarchar(101)")]
         public string LastName { get; set; }
         
-        
         public string Sex { get; set; }
         
         public string Address { get; set; }
        
         public string Birthday { get; set; }
 
-        public virtual ICollection<Card> Cards { get; set; }
+        public virtual Card Cards { get; set; }
 
     }
 }

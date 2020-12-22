@@ -244,11 +244,10 @@ namespace RYAN_sport.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(nullable: true),
+                    AplicationtUserId = table.Column<string>(nullable: true),
                     LevelId = table.Column<int>(nullable: false),
                     NumberCard = table.Column<string>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
-                    AplicationtUserId = table.Column<string>(nullable: true)
+                    Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -382,7 +381,9 @@ namespace RYAN_sport.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cards_AplicationtUserId",
                 table: "Cards",
-                column: "AplicationtUserId");
+                column: "AplicationtUserId",
+                unique: true,
+                filter: "[AplicationtUserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cards_LevelId",
@@ -412,7 +413,8 @@ namespace RYAN_sport.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Subscriptions_CardId",
                 table: "Subscriptions",
-                column: "CardId");
+                column: "CardId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

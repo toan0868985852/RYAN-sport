@@ -147,36 +147,6 @@ namespace RYAN_sport.Areas.Identity.Data
                 context.SaveChanges();
             }
 
-            //if (!context.Subscriptions.Any())
-            //{
-            //    context.Subscriptions.AddRange(
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("2019-12-22"),
-            //            EndDate = DateTime.Parse("2020-12-22")
-            //        },
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("2020-02-25"),
-            //            EndDate = DateTime.Parse("2021-02-25")
-            //        }, new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("9-10-2019"),
-            //            EndDate = DateTime.Parse("9-10-2020")
-            //        }, new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("11-12-2019"),
-            //            EndDate = DateTime.Parse("11-12-2021")
-            //        },
-            //        new Subscription
-            //        {
-            //            RegistrationDate = DateTime.Parse("9-12-2019"),
-            //            EndDate = DateTime.Parse("9-12-2020")
-            //        }
-            //    );
-            //    context.SaveChanges();
-            //}
-
             if (!context.Levels.Any())
             {
                 context.Levels.AddRange(
@@ -462,7 +432,7 @@ namespace RYAN_sport.Areas.Identity.Data
                 );
                 context.SaveChanges();
             }
-     
+
 
             if (!context.Cards.Any())
             {
@@ -470,33 +440,63 @@ namespace RYAN_sport.Areas.Identity.Data
                     new Card
                     {
                         NumberCard = "RYAN120046556",
+                        LevelId = 1,
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046557",
                         LevelId = 1
-                        
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046558",
+                        LevelId = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN120046559",
+                        LevelId = 1
+                    },
+                    new Card
+                    {
+                        NumberCard = "RYAN12004650",
+                        LevelId = 1
                     }
-                    //new Card
-                    //{
-                    //    NumberCard = "RYAN120046557",
-                    //    UserId = "",
-                    //    LevelId = 2
-                    //},
-                    //new Card
-                    //{
-                    //    NumberCard = "RYAN120046558",
-                    //    UserId = "",
-                    //    LevelId = 1
-                    //},
-                    //new Card
-                    //{
-                    //    NumberCard = "RYAN120046559",
-                    //    UserId = "",
-                    //    LevelId = 1
-                    //},
-                    //new Card
-                    //{
-                    //    NumberCard = "RYAN12004650",
-                    //    UserId = "",
-                    //    LevelId = 3
-                    //}
+                );
+                context.SaveChanges();
+            }
+
+            if (!context.Subscriptions.Any())
+            {
+                context.Subscriptions.AddRange(
+                    new Subscription
+                    {
+                        CardId = 1,
+                        RegistrationDate = DateTime.Parse("2019-12-22"),
+                        EndDate = DateTime.Parse("2020-12-22")
+                    },
+                    new Subscription
+                    {
+                        CardId = 2,
+                        RegistrationDate = DateTime.Parse("2020-02-25"),
+                        EndDate = DateTime.Parse("2021-02-25")
+                    }, new Subscription
+                    {
+                        CardId = 3,
+                        RegistrationDate = DateTime.Parse("9-10-2019"),
+                        EndDate = DateTime.Parse("9-10-2020")
+                    }, new Subscription
+                    {
+                        CardId = 4,
+                        RegistrationDate = DateTime.Parse("11-12-2019"),
+                        EndDate = DateTime.Parse("11-12-2021")
+                    },
+                    new Subscription
+                    {
+                        CardId = 5,
+                        RegistrationDate = DateTime.Parse("9-12-2019"),
+                        EndDate = DateTime.Parse("9-12-2020")
+                    }
                 );
                 context.SaveChanges();
             }

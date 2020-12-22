@@ -1,0 +1,103 @@
+﻿@page
+@model MembershipModel
+@{
+    ViewData["Title"] = "Manage Email";
+    ViewData["ActivePage"] = ManageNavPages.Membership;
+}
+
+<style>
+    .card-form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .check-card {
+        background: linear-gradient(45deg, #61aeaf, #1d3678);
+        width: 240px;
+        height: 50px;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-left: 51px;
+        margin-top: 20px;
+    }
+
+    .form-member .button-summit {
+        width: 200px;
+        margin: 20px 0 20px 361px;
+        border: 5px solid #2e5486;
+        background: none;
+        color: #305787;
+        font-size: 20px;
+    }
+
+    .card-visit {
+        background-image: linear-gradient(to right,#61aeaf, #1d3678);
+        width: 600px;
+        height: 300px;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+        .card-visit .h3h {
+            padding-left: 50px;
+            text-align: center;
+            padding-top: 25px
+        }
+
+            .card-visit .h3h:after {
+                content: "";
+                background-color: #FFFFFF;
+                width: 600px;
+                height: 2px;
+                display: inline-block;
+                clear: both;
+                right: 51px;
+                position: relative;
+                margin: auto;
+                bottom: -10px;
+            }
+</style>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<label asp-for="Username"></label>
+<input asp-for="Username" class="form-control" disabled />
+@if (Model.Input.Active == 0)
+{
+    <form asp-page="Membership" method="post" class="form-member">
+        <div class="card-form">
+            @foreach (var p in Model.Input.Cards)
+            {
+                <div class="check-card">
+                    @p.NumberCard
+                    <input name="Id" type="radio" value="@p.ID" style=" margin-left: 20px;" />
+                </div>
+
+            }
+        </div>
+
+        <button class="button-summit" type="submit">Save</button>
+    </form>
+}
+else
+{
+    @foreach (var p in Model.Input.Cards)
+    {
+        <div class="card-visit ">
+
+            <h3 class="h3h" style="">RYAN-Sport</h3>
+            <div style="padding-left: 50px;padding-top: 5px;">
+                <p><i class='fas fa-barcode'></i> @p.NumberCard</p>
+                <p><i class="material-icons">&#xe916;</i> @p.Date</p>
+            </div>
+
+        </div>
+    }
+}
+
+
+
