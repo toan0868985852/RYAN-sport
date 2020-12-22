@@ -30,7 +30,7 @@ namespace RYAN_sport.Controllers
             context.Add(contact);
             context.SaveChanges();
             String StatusMessage = "Your Feedback Sent";
-            return RedirectToAction(nameof(Index), StatusMessage);
+            return RedirectToAction(nameof(Index));
         }
 
     }
