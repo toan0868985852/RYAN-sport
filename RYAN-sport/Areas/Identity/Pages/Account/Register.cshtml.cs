@@ -25,17 +25,20 @@ namespace RYAN_sport.Areas.Identity.Pages.Account
         private readonly UserManager<AplicationtUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<AplicationtUser> userManager,
             SignInManager<AplicationtUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -80,6 +83,10 @@ namespace RYAN_sport.Areas.Identity.Pages.Account
             {
                 Response.Redirect("/");
             }
+            IdentityRole AdminManager = new IdentityRole { Name = "Administrator" };
+            IdentityRole UserManager = new IdentityRole { Name = "User" };
+            await _roleManager.CreateAsync(AdminManager);
+            await _roleManager.CreateAsync(UserManager);
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
@@ -87,6 +94,7 @@ namespace RYAN_sport.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
+            var role = _roleManager.FindByNameAsync("User").Result;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
@@ -95,7 +103,7 @@ namespace RYAN_sport.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    await _userManager.AddToRoleAsync(user, role.Name);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
