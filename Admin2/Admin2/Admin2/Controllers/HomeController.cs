@@ -6,26 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Admin2.Models;
+using Admin2.Data;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Admin2.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private Admin2Context context;
+       
+        public HomeController(Admin2Context ctx)
         {
-            _logger = logger;
+            context = ctx;
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }

@@ -1,0 +1,13 @@
+﻿@model IQueryable<Subject>;
+
+@foreach ( var p in Model)
+{
+    <div>
+        <p>Name: @p.Name</p>
+        <p>Description: @p.Description</p>
+        <p>Price: @p.Price</p>
+        <p>Time: @p.Time</p>
+        <p>Category: @p.Category</p>
+
+    </div>
+}
