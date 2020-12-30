@@ -1,13 +1,95 @@
 ﻿@model IQueryable<Subject>;
 
-@foreach ( var p in Model)
-{
-    <div>
-        <p>Name: @p.Name</p>
-        <p>Description: @p.Description</p>
-        <p>Price: @p.Price</p>
-        <p>Time: @p.Time</p>
-        <p>Category: @p.Category</p>
 
-    </div>
-}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Table name
+                </div>
+                <div>
+                    <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+                        <thead>
+                            <tr>
+                                <th data-breakpoints="xs">Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th data-breakpoints="xs">Time</th>
+
+                                <th data-breakpoints="xs sm md">Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model)
+                            {
+                            <tr data-expanded="true">
+                                <td>@p.Name</td>
+                                <td>@p.Description</td>
+                                <td>@p.Price</td>
+                                <td>@p.Time</td>
+
+                                <td>@p.Category</td>
+                            </tr>
+                            }
+
+                            
+                            @*<tr>
+                                <td>2</td>
+                                <td>Elodia</td>
+                                <td>Weisz</td>
+                                <td>Wallpaperer Helper</td>
+
+                                <td>March 30th 1982</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Raeann</td>
+                                <td>Haner</td>
+                                <td>Internal Medicine Nurse Practitioner</td>
+
+                                <td>February 26th 1966</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Junie</td>
+                                <td>Landa</td>
+                                <td>Offbearer</td>
+
+                                <td>March 29th 1966</td>
+                            </tr>
+
+                            </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+

@@ -22,6 +22,7 @@ namespace Admin2.Controllers
         {
             return View(context.Subjects);
         }
+        
 
         // GET: SubjectController/Details/5
         public ActionResult Details(int id)
