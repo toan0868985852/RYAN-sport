@@ -1,4 +1,4 @@
-﻿@model IQueryable<Subject>;
+﻿@model IQueryable<Admin2User>;
 
 <section id="main-content">
     <section class="wrapper">
@@ -31,10 +31,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var p in Model)
+                            @*@foreach (var p in Model)
                             {
                             <tr data-expanded="true">
-                                <td>@p.Name</td>
+                                <td>@p.</td>
                                 <td>@p.Description</td>
                                 <td>@p.Price</td>
                                 <td>@p.Time</td>
@@ -43,7 +43,7 @@
                                 <td><a asp-action="Edit" asp-controller="Subject" asp-route-id="@p.ID">Edit</a></td>
                                 <td><a asp-action="DeleteConfirmed" asp-controller="Subject" asp-route-id="@p.ID">Delete</a></td>
                             </tr>
-                            }
+                            }*@
 
                             
                             @*<tr>

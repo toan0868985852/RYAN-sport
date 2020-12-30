@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Admin2.Data;
+using Admin2.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Admin2.Controllers
 {
@@ -39,58 +41,98 @@ namespace Admin2.Controllers
         // POST: SubjectController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create([Bind("ID,Name,Description,Price,Category,ImgSubject,ImgSubjectDetail")] Subject subject)
         {
-            try
+            if (ModelState.IsValid)
             {
+                context.Add(subject);
+                await context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(subject);
         }
 
         // GET: SubjectController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var subject = await context.Subjects.FindAsync(id);
+            if (subject == null)
+            {
+                return NotFound();
+            }
+            return View(subject);
         }
 
         // POST: SubjectController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Price,Category,ImgSubject,ImgSubjectDetail")] Subject subject)
         {
-            try
+            if (id != subject.ID)
             {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(subject);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!SubjectExists(subject.ID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(subject);
         }
 
         // GET: SubjectController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var subject = await context.Subjects
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (subject == null)
+            {
+                return NotFound();
+            }
+
+            return View(subject);
         }
 
         // POST: SubjectController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var subject = await context.Subjects.FindAsync(id);
+            context.Subjects.Remove(subject);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool SubjectExists(int id)
+        {
+            return context.Subjects.Any(e => e.ID == id);
         }
     }
 }
