@@ -18,7 +18,7 @@
 <body>
     <header class="header fixed-top clearfix">
         <div class="brand" style="z-index:100">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 RYAN-SPORT
             </a>
             <div class="sidebar-toggle-box">
@@ -31,6 +31,49 @@
             </div>
         </div>
     </header>
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+            <!-- sidebar menu start-->
+            <div class="leftside-navigation">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="/">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>Subjects</span>
+                            <i class="fa fa-chevron-down dcjq-icon"></i>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/Subject/Create">Create</a></li>
+                            <li><a href="/Subject">List Subject</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-book"></i>
+                            <span>SportRoom</span>
+                            <i class="fa fa-chevron-down dcjq-icon"></i>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="/SportZoom/Create">Create</a></li>
+                            <li><a href="/SportZoom">List SportRoom</a></li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
 
     @RenderBody()
 

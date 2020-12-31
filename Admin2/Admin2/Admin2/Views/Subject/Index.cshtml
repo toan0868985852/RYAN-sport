@@ -5,7 +5,7 @@
         <div class="table-agile-info">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Table name
+                    Subjects
                 </div>
                 <div>
                     <table class="table" ui-jq="footable" ui-options='{
@@ -41,54 +41,18 @@
 
                                 <td>@p.Category</td>
                                 <td><a asp-action="Edit" asp-controller="Subject" asp-route-id="@p.ID">Edit</a></td>
-                                <td><a asp-action="DeleteConfirmed" asp-controller="Subject" asp-route-id="@p.ID">Delete</a></td>
+                                <td><a asp-action="DeleteConform" asp-controller="Subject" asp-route-id="@p.ID">Delete</a></td>
                             </tr>
                             }
 
                             
-                            @*<tr>
-                                <td>2</td>
-                                <td>Elodia</td>
-                                <td>Weisz</td>
-                                <td>Wallpaperer Helper</td>
-
-                                <td>March 30th 1982</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Raeann</td>
-                                <td>Haner</td>
-                                <td>Internal Medicine Nurse Practitioner</td>
-
-                                <td>February 26th 1966</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Junie</td>
-                                <td>Landa</td>
-                                <td>Offbearer</td>
-
-                                <td>March 29th 1966</td>
-                            </tr>
-
-                            </tr>*@
+                            
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.dcjqaccordion.2.7.js"></script>

@@ -1,0 +1,61 @@
+﻿@model IQueryable<SportRoom>
+    
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="table-agile-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Sport Zoom
+                    </div>
+                    <div>
+                        <table class="table" ui-jq="footable" ui-options='{
+        "paging": {
+          "enabled": true
+        },
+        "filtering": {
+          "enabled": true
+        },
+        "sorting": {
+          "enabled": true
+        }}'>
+                            <thead>
+                                <tr>
+                                    <th data-breakpoints="xs">Name</th>
+                                    <th>Address</th>
+                                    <th>Hotline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var p in Model)
+                                {
+                                <tr>
+                                    <td>@p.Name</td>
+                                    <td>@p.Address</td>
+                                    <td>@p.Hotline</td>
+                                    <td><a asp-action="Edit" asp-controller="SportZoom" asp-route-id="@p.ID">Edit</a></td>
+                                    <td><a asp-action="DeleteConform" asp-controller="SportZoom" asp-route-id="@p.ID">Delete</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery.nicescroll.js"></script>
+
